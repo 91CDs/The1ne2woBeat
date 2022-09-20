@@ -1,4 +1,5 @@
-# book_website
+# gangGangplus 
+The website for all your non needs or something along those lines
 
 This template should help get you started developing with Vue 3 in Vite.
 
