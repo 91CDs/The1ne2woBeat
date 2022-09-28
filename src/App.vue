@@ -38,33 +38,60 @@ onUnmounted(() => {
       <div class="menu" v-show="isMenuDisplay">
         <img class="profile" src="/pfp.jpg" />
         <RouterLink to="/"> <i class="fas fa-house icon"></i>Home </RouterLink>
-        <RouterLink to="/search">
-          <i class="fas fa-magnifying-glass icon"></i>Search
+        <RouterLink to="/watch">
+          <i class="fas fa-magnifying-glass icon"></i>Watch
         </RouterLink>
+        <RouterLink to="/aboutus"> About </RouterLink>
         <a class="settings"><i class="fas fa-gear icon"></i>Settings</a>
       </div>
     </nav>
-    <nav v-if="!isMobile()">
+    <nav v-if="!isMobile()" class="wrapper">
       <img class="logo" src="/logo.png" />
       <RouterLink to="/"> <i class="fas fa-house icon"></i>Home </RouterLink>
-      <RouterLink to="/search">
-        <i class="fas fa-magnifying-glass icon"></i>Search
+      <RouterLink to="/watch">
+        <i class="fas fa-magnifying-glass icon"></i>Watch
       </RouterLink>
-      <!-- Profile -->
+      <RouterLink to="/aboutus"> About </RouterLink>
       <a class="right settings"><i class="fas fa-gear icon"></i>Settings</a>
       <img class="profile" src="/pfp.jpg" />
     </nav>
   </header>
 
   <RouterView />
+
+  <footer class="wrapper">
+    <p>Made By 12B Productions</p>
+  </footer>
 </template>
 
-<style scoped>
+<style>
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 2rem;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
+  min-height: var(--header-height);
   display: flex;
   place-items: center;
+}
+
+footer {
+  min-height: var(--footer-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-accent);
+}
+footer p {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--color-heading);
 }
 
 nav {
@@ -74,6 +101,7 @@ nav {
   align-items: center;
   text-align: right;
   padding: 1rem 0;
+  top: 0;
 }
 
 nav a.router-link-exact-active {
@@ -108,15 +136,9 @@ nav a:first-of-type {
   background-color: rgba(24, 24, 24, 0.6);
   backdrop-filter: blur(10px);
 }
-.menu .profile {
-  order: 0;
-}
 .profile {
   width: 50px;
   border-radius: 50%;
-}
-.menu .settings {
-  order: 1;
 }
 .menu > * {
   margin: auto;
@@ -138,11 +160,9 @@ nav a:first-of-type {
     border-left: 1px solid var(--color-border);
   }
   .settings {
-    order: 2;
     border: 0;
   }
   .profile {
-    order: 3;
     margin-right: 1ch;
   }
 }

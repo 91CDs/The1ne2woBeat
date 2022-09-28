@@ -1,5 +1,5 @@
 <template>
-  <section class="titlecard">
+  <section class="titlecard wrapper">
     <div class="feature">
       <div class="line"></div>
       <h1 class="title">She's Dating the Gangster</h1>
@@ -35,11 +35,8 @@ section.titlecard {
   padding-left: 1rem;
 }
 .title {
-  color: var(--color-heading);
-  font-family: "Work Sans", sans-serif;
   font-size: 3.5rem;
   text-align: left;
-  line-height: 1.2;
   animation: load-title 0.6s ease-out;
 }
 .desc {

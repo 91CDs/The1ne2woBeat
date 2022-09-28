@@ -1,21 +1,74 @@
 @import "./base.css";
 
 #app {
-  width: min(80%, 1280px);
   min-height: 100vh;
-  margin: 0 auto;
   font-weight: normal;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-a,
-.green {
+.wrapper {
+  width: min(80vw, var(--max-length))
+}
+
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--color-accent);
   transition: 0.4s;
 }
 
+h1, h2, h3, h4 {
+  color: var(--color-heading);
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.1;
+}
+p {
+  font-family: Roboto, sans-serif;
+}
 .right {
   margin-left: auto;
+}
+
+/* ANIMATIONS on scroll */
+.fade-left-enter-active {
+  animation: fade-left 0.8s ease-in-out;
+}
+.fade-left-leave-active {
+  animation: fade-left 0.8s ease-in-out reverse;
+}
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-4rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-right-enter-active {
+  animation: fade-right 0.8s ease-in-out;
+}
+.fade-right-leave-active {
+  animation: fade-right 0.8s ease-in-out reverse;
+}
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translate3d(4rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @media (hover: hover) {

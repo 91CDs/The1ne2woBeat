@@ -19,6 +19,7 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-text-dark-3: rgba(235, 235, 235, 0.1);
 }
 
 /* semantic color variables for this project */
@@ -32,8 +33,10 @@
 
   --color-heading: var(--vt-c-text-dark-1);
   --color-text: var(--vt-c-text-dark-2);
+  --color-text-mute: var(--vt-c-text-dark-3);
+
   --section-gap: 160px;
-  --color-accent: hsla(160, 100%, 37%, 1);
+  --color-accent: hsla(165, 100%, 37%, 1);
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -49,6 +52,13 @@
     --color-text: var(--vt-c-text-light-1);
   }
 } */
+:root {
+  --header-height: 10vh;
+  --footer-height: 3vh;
+  --max-length: 1280px;
+  --scrollbar-width: 10px;
+  --screen-width: 100%;
+}
 
 *,
 *::before,
@@ -63,6 +73,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  overflow-x: hidden;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: "Roboto Medium", Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu,
