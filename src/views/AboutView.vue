@@ -76,6 +76,7 @@ onMounted(() => {
   background-image: linear-gradient(to right, rgba(14, 34, 9, 0.5), rgba(44, 11, 11, 0.5)),
     url("/12BPROD.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 .abouttitle h1 {
   font-size: 4rem;
