@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { onMounted, reactive } from "vue";
+import { onMounted } from "vue";
 import Quote from "../components/AboutQuote.vue";
-const eldisplay = reactive<{ [index: string]: boolean }>({});
 const observer = new IntersectionObserver(
   function (entries) {
     entries.forEach((entry) => {
       const el = entry.target as HTMLElement;
-      const elid = el.classList.item(0) as string;
-      console.log(`${elid} >> ${entry.isIntersecting}`);
-      eldisplay[elid] = entry.isIntersecting;
+      const elanim = el.getAttribute("aos") as string;
+      if (entry.isIntersecting) {
+        el.classList.add(elanim);
+      } else {
+        el.classList.remove(elanim);
+      }
     });
-    console.log(eldisplay);
   },
   { threshold: [0], rootMargin: "-40px" }
 );
@@ -30,29 +31,22 @@ onMounted(() => {
       <h1>12B Productions</h1>
     </section>
     <section class="aboutquote wrapper">
-      <Transition name="fade-left">
-        <Quote :v-show="eldisplay['topquote']" class="topquote" aos />
-      </Transition>
-      <Transition name="fade-right">
-        <blockquote
-          :v-show="eldisplay['quote']"
-          class="quote"
-          cite="https://emirateswoman.com/lebanese-director-nadine-labaki-won-cannes-jury-prize/"
-          aos
-        >
-          Cinema is not only about making people dream. It's about changing things and
-          making people think.”
-        </blockquote>
-      </Transition>
+      <Quote aos="fade-left" class="topquote" />
+      <blockquote
+        aos="fade-right"
+        class="quote"
+        cite="https://emirateswoman.com/lebanese-director-nadine-labaki-won-cannes-jury-prize/"
+      >
+        Cinema is not only about making people dream. It's about changing things and
+        making people think.”
+      </blockquote>
       <p>- Nadine Labaki.</p>
-      <Transition name="fade-left">
-        <Quote :v-show="eldisplay['bottomquote']" class="bottomquote" aos />
-      </Transition>
+      <Quote aos="fade-left" class="bottomquote" />
     </section>
     <section class="aboutus wrapper">
       <i class="fa-solid fa-info"></i>
-      <h2 :v-show="eldisplay['ustitle']" class="ustitle">Who we are</h2>
-      <p :v-show="eldisplay['ustitle']" class="aboutdesc">
+      <h2 aos="fade-left" class="ustitle">Who we are</h2>
+      <p aos="fade-left" class="aboutdesc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit
         accusamus repellendus at doloremque, aut praesentium vel ex dolore, quisquam
         accusantium! Doloribus, quibusdam? Possimus, excepturi dicta laboriosam modi ipsa

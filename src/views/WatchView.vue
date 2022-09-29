@@ -24,12 +24,18 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
           ad sequi sunt minus possimus eaque officia?
         </p>
       </div>
-      <!-- <div class="episode">
-        <img src="" alt="" class="play" />
-        <img src="" alt="" />
-        <h2 class="eptitle"></h2>
-        <p class="epdesc"></p>
-      </div> -->
+      <div class="episode">
+        <div class="overlay">
+          <img src="https://picsum.photos/1000/1000" />
+          <div id="play"><PlayIcon /></div>
+        </div>
+        <h2 class="eptitle">Episode 2: The Start</h2>
+        <p class="epdesc">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
+          nam animi quam facere, eum dolorum? Earum alias cumque saepe incidunt. Excepturi
+          ad sequi sunt minus possimus eaque officia?
+        </p>
+      </div>
     </section>
   </main>
 </template>
