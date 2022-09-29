@@ -74,7 +74,7 @@ onMounted(() => {
   z-index: -10;
   height: calc(90vh + 16rem);
   background-image: linear-gradient(to right, rgba(14, 34, 9, 0.5), rgba(44, 11, 11, 0.5)),
-    url("12BPROD.jpg");
+    url("/12BPROD.jpg");
   background-size: cover;
 }
 .abouttitle h1 {
