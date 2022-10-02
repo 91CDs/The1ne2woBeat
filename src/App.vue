@@ -32,7 +32,7 @@ onUnmounted(() => {
 
 <template>
   <header>
-    <nav v-if="isMobile()">
+    <nav v-if="isMobile()" class="wrapper">
       <img class="logo" src="/logo.png" />
       <HamburgerIcon />
       <div class="menu" v-show="isMenuDisplay">
@@ -60,7 +60,7 @@ onUnmounted(() => {
   <RouterView />
 
   <footer class="wrapper">
-    <p>Made By 12B Productions</p>
+    <p>MADE BY 12B PRODUCTIONS | 2022</p>
   </footer>
 </template>
 
@@ -87,12 +87,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-accent);
 }
 footer p {
   font-size: 1rem;
   text-align: center;
-  color: var(--color-heading);
+  color: var(--color-text);
 }
 
 nav {

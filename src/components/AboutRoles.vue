@@ -67,16 +67,27 @@
 <style scoped>
 section.roles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 12px 0;
   color: var(--color-accent);
 }
 h3:focus,
 h3:hover {
   color: var(--color-heading);
+}
+
+@media (min-width: 1024px) {
+  section.roles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 </style>

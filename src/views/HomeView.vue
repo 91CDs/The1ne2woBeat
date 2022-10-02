@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TitleCard from "../components/TitleCard.vue";
-import CastsCard from "../components/CastsCard.vue";
-import DescCard from "../components/DescCard.vue";
+import TitleCard from "../components/HomeTitle.vue";
+import CastsCard from "../components/HomeCasts.vue";
+import DescCard from "../components/HomeDesc.vue";
 </script>
 
 <template>

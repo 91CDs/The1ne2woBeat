@@ -8,7 +8,7 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
     <h1 class="watchtitle">Projects</h1>
     <section class="project wrapper">
       <div class="projtitle">
-        <h1>Shes Dating The Gangster</h1>
+        <h1><span>Shes Dating The Gangster</span></h1>
         <p class="projdetails">
           <span>2022</span><span id="PG-13">R-13</span><span>6 episodes</span>
         </p>
@@ -16,10 +16,10 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
       </div>
       <div class="episode">
         <div class="overlay" tabindex="0">
-          <img src="https://picsum.photos/1000/1000" />
+          <img src="https://picsum.photos/1920/1080" />
           <div id="play"><PlayIcon /></div>
         </div>
-        <h2 class="eptitle" tabindex="0">Episode 1: The Beginning</h2>
+        <h2 class="eptitle" tabindex="0"><span>Episode 1: The Beginning</span></h2>
         <p class="epdetails">16 min</p>
         <p class="epdesc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
@@ -29,10 +29,10 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
       </div>
       <div class="episode">
         <div class="overlay" tabindex="0">
-          <img src="https://picsum.photos/1000/1000" />
+          <img src="https://picsum.photos/1920/1080" />
           <div id="play"><PlayIcon /></div>
         </div>
-        <h2 class="eptitle" tabindex="0">Episode 2: The Start</h2>
+        <h2 class="eptitle" tabindex="0"><span>Episode 2: The Start</span></h2>
         <p class="epdetails">16 min</p>
         <p class="epdesc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
@@ -77,6 +77,8 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   margin-left: 2rem;
   margin-bottom: 1rem;
   font-size: 2.5rem;
+}
+.projtitle h1 span {
   background-image: linear-gradient(to right, var(--color-accent), wheat);
   background-size: 100% 15%;
   background-position: bottom left;
@@ -113,18 +115,18 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
 
 /* EPISODE */
 .episode {
-  height: 10rem;
   margin: 2rem 0;
   display: grid;
   grid-auto-columns: auto;
   grid-template-areas:
-    "image title details"
-    "image desc desc";
+    "image image"
+    "title details"
+    "desc desc";
   column-gap: 1.5rem;
 }
 .episode img {
-  height: 10rem;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
+  width: min(80vw, var(--max-length));
 }
 .overlay {
   grid-area: image;
@@ -148,9 +150,12 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   margin-top: 3rem;
   grid-area: title;
   width: fit-content;
+}
+.episode h2 span {
+  line-height: 1.3;
   background-image: linear-gradient(to right, var(--color-accent), wheat);
-  background-position: 0% 70%;
-  background-size: 0% 7px;
+  background-position: 0% 100%;
+  background-size: 100% 5px;
   background-repeat: no-repeat;
   transition: all 0.2s ease-out;
 }
@@ -162,20 +167,41 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   margin-top: 3rem;
   grid-area: details;
 }
-@media (hover: hover) {
+.overlay:focus img,
+.overlay:hover img {
+  filter: brightness(50%);
+}
+.overlay:focus #play,
+.overlay:hover #play {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
   .watchtitle:focus,
   .watchtitle:hover {
     transition: all 0.8s ease-in-out;
     color: var(--color-accent);
   }
   /* EPISODE */
-  .overlay:focus img,
-  .overlay:hover img {
-    filter: brightness(50%);
+  .episode {
+    height: 10rem;
+    grid-template-areas:
+      "image title details"
+      "image desc desc";
   }
-  .overlay:focus #play,
-  .overlay:hover #play {
-    opacity: 1;
+  .episode img {
+    height: 11rem;
+    width: auto;
+  }
+  .episode h2 {
+    background-image: linear-gradient(to right, var(--color-accent), wheat);
+    background-position: 0% 60%;
+    background-size: 0% 7px;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-out;
+  }
+  .episode h2 span {
+    background-size: 0% 7px;
   }
   .episode h2:focus,
   .episode h2:hover {

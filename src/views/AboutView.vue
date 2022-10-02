@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import Quote from "../components/AboutQuote.vue";
-import AboutRoles from "../components/AboutRoles.vue";
+import Quote from "../components/Icons/QuoteIcon.vue";
+import RolesCard from "../components/AboutRoles.vue";
 const observer = new IntersectionObserver(
   function (entries) {
     entries.forEach((entry) => {
@@ -53,7 +53,7 @@ onMounted(() => {
         accusantium! Doloribus, quibusdam? Possimus, excepturi dicta laboriosam modi ipsa
         voluptate.
       </p>
-      <AboutRoles />
+      <RolesCard />
     </section>
   </main>
 </template>
@@ -69,7 +69,11 @@ main.parallax {
   perspective: 2px;
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: 0;
   height: calc(100vh - var(--header-height));
+}
+main.parallax::-webkit-scrollbar {
+  display: none;
 }
 .abouttitle {
   height: 90vh;
@@ -96,7 +100,9 @@ main.parallax {
   transform: translate3d(0px, 0px, -3px) scale(2.6);
 }
 .abouttitle h1 {
-  font-size: 4rem;
+  font-size: min(13vw, 4rem);
+  text-align: center;
+  padding: 2rem;
   color: var(--color-heading);
   animation: load-title 1s ease-in-out;
 }
@@ -104,7 +110,7 @@ main.parallax {
   position: absolute;
   left: 5rem;
   padding-bottom: 1rem;
-  font-size: min(40vw, 35rem);
+  font-size: min(50vw, 35rem);
   color: var(--color-text-mute);
   transform: translate3d(0px, 0px, -1px) scale(1.6);
   animation: load-desc 1s ease-in-out;
@@ -114,22 +120,20 @@ main.parallax {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 5rem;
   min-height: 20rem;
+  padding: 5rem;
   background-color: var(--color-accent);
 }
 .aboutquote blockquote {
-  font-size: 2rem;
+  font-size: min(6vw, 2rem);
   text-align: center;
   color: var(--color-heading);
-  padding: 0 2rem;
   z-index: 1;
 }
 .aboutquote p {
   z-index: 1;
   font-size: 1.2rem;
   text-align: right;
-  margin-right: 3rem;
 }
 
 .topquote,
