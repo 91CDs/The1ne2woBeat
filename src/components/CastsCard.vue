@@ -1,6 +1,6 @@
 <template>
   <section class="charactercard wrapper">
-    <h2 class="green">Characters</h2>
+    <h2>Characters</h2>
     <section class="image-wrapper" v-dragscroll="true">
       <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
       <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
@@ -20,7 +20,7 @@
 section.charactercard {
   margin: 2rem 0;
 }
-h2 {
+.charactercard h2 {
   font-size: 2.5rem;
   text-align: center;
 }

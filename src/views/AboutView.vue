@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import Quote from "../components/AboutQuote.vue";
+import AboutRoles from "../components/AboutRoles.vue";
 const observer = new IntersectionObserver(
   function (entries) {
     entries.forEach((entry) => {
@@ -13,7 +14,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: [0], rootMargin: "-40px" }
+  { threshold: [0] }
 );
 
 onMounted(() => {
@@ -25,13 +26,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main class="parallax">
     <section class="abouttitle">
       <h2 class="bgelement">12B</h2>
       <h1>12B Productions</h1>
     </section>
     <section class="aboutquote wrapper">
-      <Quote aos="fade-left" class="topquote" />
+      <Quote aos="fade-left" style="--delay: 200ms" class="topquote" />
       <blockquote
         aos="fade-right"
         class="quote"
@@ -41,22 +42,35 @@ onMounted(() => {
         making people think.”
       </blockquote>
       <p>- Nadine Labaki.</p>
-      <Quote aos="fade-left" class="bottomquote" />
+      <Quote aos="fade-left" style="--delay: 200ms" class="bottomquote" />
     </section>
-    <section class="aboutus wrapper">
-      <i class="fa-solid fa-info"></i>
-      <h2 aos="fade-left" class="ustitle">Who we are</h2>
-      <p aos="fade-left" class="aboutdesc">
+    <section class="aboutus">
+      <div class="icon wrapper"><i class="fa-solid fa-info"></i></div>
+      <h2 aos="fade-left" class="ustitle wrapper">Who we are</h2>
+      <p aos="fade-left" class="aboutdesc wrapper" style="--delay: 500ms">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit
         accusamus repellendus at doloremque, aut praesentium vel ex dolore, quisquam
         accusantium! Doloribus, quibusdam? Possimus, excepturi dicta laboriosam modi ipsa
         voluptate.
       </p>
+      <AboutRoles />
     </section>
   </main>
 </template>
 
+<style scoped>
+section {
+  transform-style: preserve-3d;
+}
+</style>
+
 <style>
+main.parallax {
+  perspective: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100vh - var(--header-height));
+}
 .abouttitle {
   height: 90vh;
   width: 100vw;
@@ -72,11 +86,14 @@ onMounted(() => {
   left: 0;
   right: 0;
   z-index: -10;
-  height: calc(90vh + 16rem);
+  height: calc(90vh + 20rem);
+  aspect-ratio: 16/9;
   background-image: linear-gradient(to right, rgba(14, 34, 9, 0.5), rgba(44, 11, 11, 0.5)),
     url("/12BPROD.jpg");
-  background-size: cover;
+  background-size: contain;
   background-attachment: fixed;
+  background-position: top center;
+  transform: translate3d(0px, 0px, -3px) scale(2.6);
 }
 .abouttitle h1 {
   font-size: 4rem;
@@ -89,12 +106,16 @@ onMounted(() => {
   padding-bottom: 1rem;
   font-size: min(40vw, 35rem);
   color: var(--color-text-mute);
+  transform: translate3d(0px, 0px, -1px) scale(1.6);
   animation: load-desc 1s ease-in-out;
 }
 
 .aboutquote {
-  padding: 5rem;
-  min-height: 16rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  min-height: 20rem;
   background-color: var(--color-accent);
 }
 .aboutquote blockquote {
@@ -130,8 +151,11 @@ onMounted(() => {
 }
 
 .aboutus {
-  height: calc(100vh - 16rem);
-  padding: 5rem;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  background-color: var(--color-background);
+}
+.aboutus div.icon {
+  padding-top: 4rem;
 }
 .aboutus svg {
   outline: 5px solid var(--color-accent);
@@ -146,10 +170,9 @@ onMounted(() => {
   font-size: 3rem;
   color: var(--color-accent);
   text-align: left;
-  margin: 1rem 0;
+  padding: 1rem 0;
 }
 .aboutus p {
   font-size: 1rem;
-  animation-delay: 500ms;
 }
 </style>

@@ -77,6 +77,7 @@ header {
   line-height: 1.5;
   max-height: 100vh;
   min-height: var(--header-height);
+  background-color: var(--color-background);
   display: flex;
   place-items: center;
 }

@@ -9,15 +9,18 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
     <section class="project wrapper">
       <div class="projtitle">
         <h1>Shes Dating The Gangster</h1>
-        <p class="rating">Rate this Movie:</p>
+        <p class="projdetails">
+          <span>2022</span><span id="PG-13">R-13</span><span>6 episodes</span>
+        </p>
         <StarRating />
       </div>
       <div class="episode">
-        <div class="overlay">
+        <div class="overlay" tabindex="0">
           <img src="https://picsum.photos/1000/1000" />
           <div id="play"><PlayIcon /></div>
         </div>
-        <h2 class="eptitle">Episode 1: The Beginning</h2>
+        <h2 class="eptitle" tabindex="0">Episode 1: The Beginning</h2>
+        <p class="epdetails">16 min</p>
         <p class="epdesc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
           nam animi quam facere, eum dolorum? Earum alias cumque saepe incidunt. Excepturi
@@ -25,11 +28,12 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
         </p>
       </div>
       <div class="episode">
-        <div class="overlay">
+        <div class="overlay" tabindex="0">
           <img src="https://picsum.photos/1000/1000" />
           <div id="play"><PlayIcon /></div>
         </div>
-        <h2 class="eptitle">Episode 2: The Start</h2>
+        <h2 class="eptitle" tabindex="0">Episode 2: The Start</h2>
+        <p class="epdetails">16 min</p>
         <p class="epdesc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
           nam animi quam facere, eum dolorum? Earum alias cumque saepe incidunt. Excepturi
@@ -47,20 +51,18 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   color: var(--color-accent);
   margin-bottom: 2rem;
 }
-.watchtitle:hover {
-  transition: all 0.8s ease-in-out;
-  color: var(--color-accent);
-}
+
+/* TITLE */
 .projtitle {
   min-height: 50vh;
   border-radius: 4rem 4rem 0 0;
-  box-shadow: 0 -30px 120px -60px hsla(165, 100%, 37%, 0.5);
+  box-shadow: 0 -60px 100px -75px var(--color-accent);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   text-align: left;
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 10%, var(--color-background)),
+  background-image: var(--fade-gradient),
     linear-gradient(
       120deg,
       rgba(207, 75, 51, 0.5) 1%,
@@ -89,45 +91,56 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
     background-size: 100% 15%;
   }
 }
+.projtitle .projdetails {
+  display: flex;
+  align-items: center;
+}
 .projtitle p {
   margin-left: 2rem;
-  font-size: 1.1rem;
+}
+.projtitle #PG-13 {
+  display: inline-block;
+  font-size: 12px;
+  background-color: var(--color-accent);
+  color: var(--color-heading);
+  border-radius: 5rem;
+  padding: 0 12px;
+  margin: 0 10px;
 }
 .projtitle .buttons {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
+/* EPISODE */
 .episode {
   height: 10rem;
+  margin: 2rem 0;
   display: grid;
+  grid-auto-columns: auto;
   grid-template-areas:
-    "image title"
-    "image desc";
+    "image title details"
+    "image desc desc";
   column-gap: 1.5rem;
 }
 .episode img {
   height: 10rem;
+  aspect-ratio: 16/9;
 }
 .overlay {
   grid-area: image;
-}
-.overlay:hover img {
-  filter: brightness(50%);
-}
-.overlay:hover #play {
-  opacity: 1;
-  transition: all 0.2s ease-in-out;
 }
 #play {
   width: 2rem;
   height: 2rem;
   position: absolute;
   z-index: 5;
-  left: 4rem;
-  top: 4rem;
+  left: calc(50% - 1rem);
+  top: calc(50% - 1rem);
   right: 0;
   bottom: 0;
   opacity: 0;
+  fill: var(--color-accent);
+  transition: all 0.2s ease-in-out;
 }
 .episode h2 {
   font-size: 1.5rem;
@@ -135,17 +148,39 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   margin-top: 3rem;
   grid-area: title;
   width: fit-content;
-}
-.episode h2:hover {
-  transition: all 0.2s ease-out;
-  transform: translate(0, -5px);
   background-image: linear-gradient(to right, var(--color-accent), wheat);
-  background-size: 100% 15%;
   background-position: 0% 70%;
+  background-size: 0% 7px;
   background-repeat: no-repeat;
-  animation: load-underline 0.5s ease-in-out;
+  transition: all 0.2s ease-out;
 }
-.episode p {
+.episode .epdesc {
   grid-area: desc;
+}
+.episode .epdetails {
+  display: inline-block;
+  margin-top: 3rem;
+  grid-area: details;
+}
+@media (hover: hover) {
+  .watchtitle:focus,
+  .watchtitle:hover {
+    transition: all 0.8s ease-in-out;
+    color: var(--color-accent);
+  }
+  /* EPISODE */
+  .overlay:focus img,
+  .overlay:hover img {
+    filter: brightness(50%);
+  }
+  .overlay:focus #play,
+  .overlay:hover #play {
+    opacity: 1;
+  }
+  .episode h2:focus,
+  .episode h2:hover {
+    transform: translate(0, -5px);
+    background-size: 100% 7px;
+  }
 }
 </style>

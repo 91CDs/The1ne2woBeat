@@ -8,14 +8,10 @@
   align-items: center;
   flex-direction: column;
 }
-main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
 .wrapper {
-  width: min(80vw, var(--max-length))
+  width: min(80vw, var(--max-length));
+  margin: 0 auto;
 }
 
 a {
@@ -26,11 +22,13 @@ a {
 
 h1, h2, h3, h4 {
   color: var(--color-heading);
-  font-family: "Work Sans", sans-serif;
+  font-family: "Work Sans", "Roboto Medium", Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
   line-height: 1.1;
+  text-align: left;
 }
 p {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", Roboto, Arial, Helvetica, sans-serif;
 }
 .right {
   margin-left: auto;
@@ -38,27 +36,33 @@ p {
 
 /* ANIMATIONS on scroll */
 [aos="fade-left"] {
+  --delay: 0ms;
   opacity: 0;
   transform: translate3d(-4rem, 0, 0);
 }
 .fade-left {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out var(--delay);
 }
 
 [aos="fade-right"] {
+  --delay: 0ms;
   opacity: 0;
   transform: translate3d(4rem, 0, 0);
 }
 .fade-right {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out var(--delay);
+}
+
+*:focus {
+  outline: 1px solid var(--color-border-hover);
 }
 
 @media (hover: hover) {
   a:hover {
-    color: hsla(160, 100%, 50%, 1);
+    color: var(--color-accent-mute);
   }
 }

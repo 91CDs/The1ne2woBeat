@@ -3,6 +3,7 @@
     <div class="feature">
       <div class="line"></div>
       <h1 class="title">She's Dating the Gangster</h1>
+      <p class="subtitle">A film by 12B Productions</p>
       <p class="desc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorem placeat
         natus eos debitis itaque asperiores nihil optio quidem? Dolore saepe rem molestias
@@ -15,7 +16,7 @@
 <style>
 section.titlecard {
   padding-top: 23rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 40%, var(--color-background)),
+  background-image: var(--fade-gradient),
     linear-gradient(
       120deg,
       rgba(207, 75, 51, 0.5) 1%,
@@ -35,14 +36,20 @@ section.titlecard {
   padding-left: 1rem;
 }
 .title {
+  font-family: "Changa One", "Roboto Medium", Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
   font-size: 3.5rem;
-  text-align: left;
-  animation: load-title 0.6s ease-out;
+  animation: load-left 0.6s ease-out;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-heading);
+  animation: load-right 1s ease-out;
 }
 .desc {
   font-size: 1rem;
   text-indent: 3rem;
-  animation: load-desc 1s ease-out;
+  animation: load-right 1s ease-out;
 }
 @keyframes load-line {
   from {
@@ -52,7 +59,7 @@ section.titlecard {
     width: 5rem;
   }
 }
-@keyframes load-title {
+@keyframes load-left {
   from {
     opacity: 0;
     transform: translate(3rem, 0);
@@ -62,7 +69,7 @@ section.titlecard {
     transform: translate(0, 0);
   }
 }
-@keyframes load-desc {
+@keyframes load-right {
   from {
     opacity: 0;
     transform: translate(-4rem, 0);
