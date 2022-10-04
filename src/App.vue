@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HamburgerIcon from "./components/Icons/HamburgerIcon.vue";
+import ThemesButton from "./components/ThemesButton.vue";
 function isMobile() {
   const width = window.innerWidth;
   return width <= 1024 ? true : false;
@@ -37,9 +38,9 @@ onUnmounted(() => {
       <HamburgerIcon />
       <div class="menu" v-show="isMenuDisplay">
         <img class="profile" src="/pfp.jpg" />
-        <RouterLink to="/"> <i class="fas fa-house icon"></i>Home </RouterLink>
+        <RouterLink to="/"> <i class="fas fa-house icon"></i> Home </RouterLink>
         <RouterLink to="/watch">
-          <i class="fas fa-magnifying-glass icon"></i>Watch
+          <i class="fas fa-magnifying-glass icon"></i> Watch
         </RouterLink>
         <RouterLink to="/aboutus"> About </RouterLink>
         <a class="settings"><i class="fas fa-gear icon"></i>Settings</a>
@@ -47,20 +48,19 @@ onUnmounted(() => {
     </nav>
     <nav v-if="!isMobile()" class="wrapper">
       <img class="logo" src="/logo.png" />
-      <RouterLink to="/"> <i class="fas fa-house icon"></i>Home </RouterLink>
+      <RouterLink to="/"> <i class="fas fa-house icon"></i> Home </RouterLink>
       <RouterLink to="/watch">
-        <i class="fas fa-magnifying-glass icon"></i>Watch
+        <i class="fas fa-magnifying-glass icon"></i> Watch
       </RouterLink>
       <RouterLink to="/aboutus"> About </RouterLink>
-      <a class="right settings"><i class="fas fa-gear icon"></i>Settings</a>
-      <img class="profile" src="/pfp.jpg" />
+      <ThemesButton />
     </nav>
   </header>
 
   <RouterView />
 
-  <footer class="wrapper">
-    <p>MADE BY 12B PRODUCTIONS | 2022</p>
+  <footer>
+    <p class="f-600">MADE BY 12B PRODUCTIONS | 2022</p>
   </footer>
 </template>
 
@@ -84,6 +84,8 @@ header {
 
 footer {
   min-height: var(--footer-height);
+  background-color: var(--color-background-mute);
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +98,7 @@ footer p {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   text-align: right;
@@ -153,7 +155,6 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   nav {
-    font-size: 1rem;
     text-align: left;
   }
   nav a {

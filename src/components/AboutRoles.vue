@@ -2,14 +2,14 @@
 <template>
   <section class="roles wrapper">
     <div class="roleitem">
-      <h3>Directors</h3>
+      <h3 class="f-700">Directors</h3>
       <p>
         Athena Nicole Tivi <br />
         Elisha Marielle Sorosoro
       </p>
     </div>
     <div class="roleitem">
-      <h3>Scriptwriters</h3>
+      <h3 class="f-700">Scriptwriters</h3>
       <p>
         Athena Nicole Tivi <br />
         Elisha Marielle Sorosoro <br />
@@ -17,21 +17,21 @@
       </p>
     </div>
     <div class="roleitem">
-      <h3>Cinematographer</h3>
+      <h3 class="f-700">Cinematographer</h3>
       <p>
         Lance Gonzales <br />
         Mark Baguio
       </p>
     </div>
     <div class="roleitem">
-      <h3>Video Editor</h3>
+      <h3 class="f-700">Video Editor</h3>
       <p>
         Timothy Chester Ariem <br />
         Mark Gabriel Adan <br />
       </p>
     </div>
     <div class="roleitem">
-      <h3>Costume & Props Designer</h3>
+      <h3 class="f-700">Costume & Props Designer</h3>
       <p>
         Kayle Abenojar <br />
         Kent Reyes <br />
@@ -39,7 +39,7 @@
       </p>
     </div>
     <div class="roleitem">
-      <h3>Website Editor</h3>
+      <h3 class="f-700">Website Editor</h3>
       <p>
         Carl David Benamer <br />
         Elex Ysmael Maala <br />
@@ -47,14 +47,14 @@
       </p>
     </div>
     <div class="roleitem">
-      <h3>Photographers</h3>
+      <h3 class="f-700">Photographers</h3>
       <p>
         Lance Gonzales <br />
         Mark Baguio
       </p>
     </div>
     <div class="roleitem">
-      <h3>Poster Designer</h3>
+      <h3 class="f-700">Poster Designer</h3>
       <p>
         Elex Ysmael Maala <br />
         Carl David Benamer <br />

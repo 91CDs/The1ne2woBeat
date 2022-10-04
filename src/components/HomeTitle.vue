@@ -3,19 +3,26 @@
     <div class="feature">
       <div class="line"></div>
       <h1 class="title">She's Dating the Gangster</h1>
-      <p class="subtitle">A film by 12B Productions</p>
+      <p class="subtitle f-500">A film by 12B Productions</p>
       <p class="desc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorem placeat
         natus eos debitis itaque asperiores nihil optio quidem? Dolore saepe rem molestias
         laborum mollitia sapiente sunt ratione vero odit.
       </p>
+      <RouterLink to="/watch">
+        <button class="f-600" tabindex="0">See Episodes</button>
+      </RouterLink>
+      <RouterLink to="/watch" href="#main">
+        <button class="f-600 highlight" tabindex="0">See Trailer</button>
+      </RouterLink>
     </div>
   </section>
 </template>
 
 <style>
 section.titlecard {
-  padding-top: 23rem;
+  padding-top: 20rem;
+  padding-bottom: 3rem;
   background-image: var(--fade-gradient),
     linear-gradient(
       120deg,
@@ -26,7 +33,7 @@ section.titlecard {
     url("https://picsum.photos/seed/picsum/1280/700");
 }
 .line {
-  background-color: wheat;
+  background-color: var(--color-accent-mute);
   border-radius: 1rem;
   width: 5rem;
   height: 10px;
@@ -36,8 +43,7 @@ section.titlecard {
   padding-left: 1rem;
 }
 .title {
-  font-family: "Changa One", "Roboto Medium", Impact, Haettenschweiler,
-    "Arial Narrow Bold", sans-serif;
+  font-family: var(--font-display);
   font-size: 3.5rem;
   animation: load-left 0.6s ease-out;
 }
@@ -49,6 +55,7 @@ section.titlecard {
 .desc {
   font-size: 1rem;
   text-indent: 3rem;
+  margin-bottom: 1rem;
   animation: load-right 1s ease-out;
 }
 @keyframes load-line {

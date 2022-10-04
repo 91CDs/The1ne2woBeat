@@ -5,10 +5,10 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
 
 <template>
   <main>
-    <h1 class="watchtitle">Projects</h1>
+    <h1 class="watchtitle f-800">Projects</h1>
     <section class="project wrapper">
       <div class="projtitle">
-        <h1><span>Shes Dating The Gangster</span></h1>
+        <h1><span class="f-800">Shes Dating The Gangster</span></h1>
         <p class="projdetails">
           <span>2022</span><span id="PG-13">R-13</span><span>6 episodes</span>
         </p>
@@ -19,7 +19,9 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
           <img src="https://picsum.photos/1920/1080" />
           <div id="play"><PlayIcon /></div>
         </div>
-        <h2 class="eptitle" tabindex="0"><span>Episode 1: The Beginning</span></h2>
+        <h2 class="eptitle" tabindex="0">
+          <span class="f-800">Episode 1: The Beginning</span>
+        </h2>
         <p class="epdetails">16 min</p>
         <p class="epdesc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
@@ -32,7 +34,9 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
           <img src="https://picsum.photos/1920/1080" />
           <div id="play"><PlayIcon /></div>
         </div>
-        <h2 class="eptitle" tabindex="0"><span>Episode 2: The Start</span></h2>
+        <h2 class="eptitle" tabindex="0">
+          <span class="f-800">Episode 2: The Start</span>
+        </h2>
         <p class="epdetails">16 min</p>
         <p class="epdesc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam

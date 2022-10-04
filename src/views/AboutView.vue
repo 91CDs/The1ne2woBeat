@@ -28,8 +28,8 @@ onMounted(() => {
 <template>
   <main class="parallax">
     <section class="abouttitle">
-      <h2 class="bgelement">12B</h2>
-      <h1>12B Productions</h1>
+      <h2 class="bgelement f-800">12B</h2>
+      <h1 class="f-800">12B Productions</h1>
     </section>
     <section class="aboutquote wrapper">
       <Quote aos="fade-left" style="--delay: 200ms" class="topquote" />
@@ -46,7 +46,7 @@ onMounted(() => {
     </section>
     <section class="aboutus">
       <div class="icon wrapper"><i class="fa-solid fa-info"></i></div>
-      <h2 aos="fade-left" class="ustitle wrapper">Who we are</h2>
+      <h2 aos="fade-left" class="ustitle wrapper f-800">Who we are</h2>
       <p aos="fade-left" class="aboutdesc wrapper" style="--delay: 500ms">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit
         accusamus repellendus at doloremque, aut praesentium vel ex dolore, quisquam
@@ -91,10 +91,9 @@ main.parallax::-webkit-scrollbar {
   right: 0;
   z-index: -10;
   height: calc(90vh + 20rem);
-  aspect-ratio: 16/9;
   background-image: linear-gradient(to right, rgba(14, 34, 9, 0.5), rgba(44, 11, 11, 0.5)),
     url("/12BPROD.jpg");
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   background-position: top center;
   transform: translate3d(0px, 0px, -3px) scale(2.6);

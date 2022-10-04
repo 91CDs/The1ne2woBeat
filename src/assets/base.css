@@ -35,9 +35,14 @@
   --color-text: var(--c-text-dark-2);
   --color-text-mute: var(--c-text-dark-3);
 
+  --color-accent-base: 23, 100%;
   --color-accent: hsla(23, 100%, 65%, 1);
-  --color-accent-mute: hsla(30, 100%, 80%, 1);
+  --color-accent-mute: hsla(23, 100%, 80%, 1);
   --fade-gradient: linear-gradient(rgba(0, 0, 0, 0) 40%, var(--color-background) 95%);
+
+  --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-display: "Changa One", var(--font-fallback);
 
   --section-gap: 160px;
   --header-height: 10vh;
@@ -46,20 +51,6 @@
   --scrollbar-width: 10px;
   --screen-width: 100%;
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --color-background: var(--c-white);
-    --color-background-soft: var(--c-white-soft);
-    --color-background-mute: var(--c-white-mute);
-  
-    --color-border: var(--c-divider-light-2);
-    --color-border-hover: var(--c-divider-light-1);
-  
-    --color-heading: var(--c-text-light-1);
-    --color-text: var(--c-text-light-1);
-  }
-} */
 
 *,
 *::before,
@@ -77,8 +68,7 @@ body {
   overflow-x: hidden;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: "Open Sans", Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Open Sans", var(--font-fallback);
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

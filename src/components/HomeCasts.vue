@@ -1,24 +1,38 @@
 <template>
   <section class="charactercard wrapper">
-    <h2>Characters</h2>
+    <h2 class="f-800">Characters</h2>
     <section class="image-wrapper" v-dragscroll="true">
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
-      <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+      <div class="poster">
+        <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+        <h3 class="name f-700">Kenji as Kenji</h3>
+      </div>
+      <div class="poster">
+        <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+        <h3 class="name f-700">Kenji as Kenji</h3>
+      </div>
+      <div class="poster">
+        <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+        <h3 class="name f-700">Kenji as Kenji</h3>
+      </div>
+      <div class="poster">
+        <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+        <h3 class="name f-700">Kenji as Kenji</h3>
+      </div>
+      <div class="poster">
+        <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+        <h3 class="name f-700">Kenji as Kenji</h3>
+      </div>
+      <div class="poster">
+        <img class="image" src="https://picsum.photos/1080/1920" alt="poster" />
+        <h3 class="name f-700">Kenji as Kenji</h3>
+      </div>
     </section>
   </section>
 </template>
 
 <style>
 section.charactercard {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .charactercard h2 {
   font-size: 2.5rem;
@@ -30,24 +44,35 @@ section.charactercard {
   overflow-x: auto;
   padding: 1rem 0;
   scrollbar-width: 0;
-  border-top: 1px solid var(--color-accent);
 }
 .image-wrapper::-webkit-scrollbar-thumb {
-  background-color: aquamarine;
+  background-color: var(--color-accent-mute);
 }
 
-.image {
-  width: calc(100% / 4);
-  height: calc(100% / 4);
+.poster:nth-child(n) {
+  flex-direction: column;
+}
+.poster:nth-child(2n) {
+  flex-direction: column-reverse;
+}
+.poster {
   margin: 0 1rem;
+  display: flex;
+}
+.name {
+  text-align: center;
+  margin: 1rem 0;
+}
+.image {
+  width: calc(1080px / 4);
+  height: calc(1920px / 4);
   outline: 1px solid transparent;
   outline-offset: 0px;
 }
-
 .image:hover,
 .image:focus {
   outline-offset: 5px;
-  outline: 1px solid aquamarine;
+  outline: 1px solid var(--color-accent-mute);
   transition: all 0.2s ease-in-out;
 }
 </style>
