@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import StarRating from "../components/StarRating.vue";
-import PlayIcon from "../components/Icons/PlayIcon.vue";
+import Episodes from "../components/WatchEpisodes.vue";
+import Trailers from "../components/WatchTrailers.vue";
+import { ref } from "vue";
+const currentTab = ref<string | number>("Episodes");
+const tabs: { [index: string | number]: typeof Episodes } = {
+  Episodes,
+  Trailers,
+};
 </script>
 
 <template>
@@ -14,36 +21,17 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
         </p>
         <StarRating />
       </div>
-      <div class="episode">
-        <div class="overlay" tabindex="0">
-          <img src="https://picsum.photos/1920/1080" />
-          <div id="play"><PlayIcon /></div>
-        </div>
-        <h2 class="eptitle" tabindex="0">
-          <span class="f-800">Episode 1: The Beginning</span>
-        </h2>
-        <p class="epdetails">16 min</p>
-        <p class="epdesc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
-          nam animi quam facere, eum dolorum? Earum alias cumque saepe incidunt. Excepturi
-          ad sequi sunt minus possimus eaque officia?
-        </p>
+      <div class="watchtabs wrapper">
+        <a
+          v-for="(_, tab) in tabs"
+          :key="tab"
+          :class="{ tabactive: currentTab === tab }"
+          @click="currentTab = tab"
+        >
+          {{ tab }}
+        </a>
       </div>
-      <div class="episode">
-        <div class="overlay" tabindex="0">
-          <img src="https://picsum.photos/1920/1080" />
-          <div id="play"><PlayIcon /></div>
-        </div>
-        <h2 class="eptitle" tabindex="0">
-          <span class="f-800">Episode 2: The Start</span>
-        </h2>
-        <p class="epdetails">16 min</p>
-        <p class="epdesc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolor aliquam
-          nam animi quam facere, eum dolorum? Earum alias cumque saepe incidunt. Excepturi
-          ad sequi sunt minus possimus eaque officia?
-        </p>
-      </div>
+      <component :is="tabs[currentTab]"></component>
     </section>
   </main>
 </template>
@@ -117,67 +105,28 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   margin-bottom: 2rem;
 }
 
-/* EPISODE */
-.episode {
-  margin: 2rem 0;
-  display: grid;
-  grid-auto-columns: auto;
-  grid-template-areas:
-    "image image"
-    "title details"
-    "desc desc";
-  column-gap: 1.5rem;
+.watchtabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.episode img {
-  aspect-ratio: 16 / 9;
-  width: min(80vw, var(--max-length));
+.watchtabs a {
+  padding: 1rem;
 }
-.overlay {
-  grid-area: image;
-}
-#play {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  z-index: 5;
-  left: calc(50% - 1rem);
-  top: calc(50% - 1rem);
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  fill: var(--color-accent);
-  transition: all 0.2s ease-in-out;
-}
-.episode h2 {
-  font-size: 1.5rem;
-  text-align: left;
-  margin-top: 3rem;
-  grid-area: title;
-  width: fit-content;
-}
-.episode h2 span {
-  line-height: 1.3;
-  background-image: linear-gradient(to right, var(--color-accent), wheat);
-  background-position: 0% 100%;
-  background-size: 100% 5px;
+a.tabactive {
+  background-image: linear-gradient(
+    to right,
+    var(--color-accent),
+    var(--color-accent-mute)
+  );
+  background-size: 400% 5px;
+  background-position: top left;
   background-repeat: no-repeat;
-  transition: all 0.2s ease-out;
 }
-.episode .epdesc {
-  grid-area: desc;
-}
-.episode .epdetails {
-  display: inline-block;
-  margin-top: 3rem;
-  grid-area: details;
-}
-.overlay:focus img,
-.overlay:hover img {
-  filter: brightness(50%);
-}
-.overlay:focus #play,
-.overlay:hover #play {
-  opacity: 1;
+a.tabactive:hover {
+  background-position: top right;
+  transition: all 0.4s ease-in-out;
 }
 
 @media (min-width: 1024px) {
@@ -185,32 +134,6 @@ import PlayIcon from "../components/Icons/PlayIcon.vue";
   .watchtitle:hover {
     transition: all 0.8s ease-in-out;
     color: var(--color-accent);
-  }
-  /* EPISODE */
-  .episode {
-    height: 10rem;
-    grid-template-areas:
-      "image title details"
-      "image desc desc";
-  }
-  .episode img {
-    height: 11rem;
-    width: auto;
-  }
-  .episode h2 {
-    background-image: linear-gradient(to right, var(--color-accent), wheat);
-    background-position: 0% 60%;
-    background-size: 0% 7px;
-    background-repeat: no-repeat;
-    transition: all 0.2s ease-out;
-  }
-  .episode h2 span {
-    background-size: 0% 7px;
-  }
-  .episode h2:focus,
-  .episode h2:hover {
-    transform: translate(0, -5px);
-    background-size: 100% 7px;
   }
 }
 </style>

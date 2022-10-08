@@ -104,6 +104,10 @@ main.parallax::-webkit-scrollbar {
   padding: 2rem;
   color: var(--color-heading);
   animation: load-title 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.abouttitle h1:hover {
+  font-size: min(14vw, 5rem);
 }
 .abouttitle h2 {
   position: absolute;
@@ -112,6 +116,7 @@ main.parallax::-webkit-scrollbar {
   font-size: min(50vw, 35rem);
   color: var(--color-text-mute);
   transform: translate3d(0px, 0px, -1px) scale(1.6);
+  pointer-events: none;
   animation: load-desc 1s ease-in-out;
 }
 

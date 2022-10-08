@@ -59,8 +59,9 @@ onUnmounted(() => {
 
   <RouterView />
 
-  <footer>
-    <p class="f-600">MADE BY 12B PRODUCTIONS | 2022</p>
+  <footer class="wrapper">
+    <p class="f-400">Made by 12B Productions</p>
+    <p class="f-400">2022</p>
   </footer>
 </template>
 
@@ -84,16 +85,18 @@ header {
 
 footer {
   min-height: var(--footer-height);
-  background-color: var(--color-background-mute);
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 footer p {
   font-size: 1rem;
   text-align: center;
+  padding: 0 1rem;
   color: var(--color-text);
+}
+footer p + p {
+  border-left: 1px solid var(--color-border);
 }
 
 nav {
