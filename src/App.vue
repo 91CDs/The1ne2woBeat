@@ -60,7 +60,7 @@ onUnmounted(() => {
   <RouterView />
 
   <footer class="wrapper">
-    <p class="f-400">Made by 12B Productions</p>
+    <p class="f-400">Made by TheOneToBeat Productions</p>
     <p class="f-400">2022</p>
   </footer>
 </template>
