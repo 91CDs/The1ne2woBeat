@@ -37,7 +37,7 @@ onUnmounted(() => {
       <img class="logo" src="/onetobeatlogodark.png" />
       <HamburgerIcon />
       <div class="menu" v-show="isMenuDisplay">
-        <img class="profile" src="/pfp.jpg" />
+        <img class="logo-m" src="/onetobeatlogodark.png" />
         <RouterLink to="/"> <i class="fas fa-house icon"></i> Home </RouterLink>
         <RouterLink to="/watch">
           <i class="fas fa-magnifying-glass icon"></i> Watch
@@ -148,7 +148,7 @@ nav a:first-of-type {
   background-color: rgba(24, 24, 24, 0.6);
   backdrop-filter: blur(10px);
 }
-.profile {
+.logo-m {
   width: 50px;
   border-radius: 50%;
 }
