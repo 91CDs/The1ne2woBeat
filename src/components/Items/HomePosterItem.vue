@@ -7,7 +7,6 @@ const styles = defineProps<{
 
 function setDisplay() {
   display.value = !display.value;
-  console.log("clicked poster");
 }
 </script>
 
@@ -21,7 +20,7 @@ function setDisplay() {
       alt="poster"
     />
     <h3 class="name f-700">
-      <slot>KENJI as KENJI</slot>
+      <slot></slot>
     </h3>
   </div>
 </template>
@@ -57,8 +56,8 @@ function setDisplay() {
   transition: all 0.1s ease-in-out;
 }
 .image {
-  width: 500px;
-  height: calc(1920px * 0.3);
+  width: calc(1587px * 0.3);
+  height: calc(1587px * 0.3);
   object-fit: cover;
   outline: 1px solid transparent;
   outline-offset: 0px;
@@ -71,8 +70,8 @@ function setDisplay() {
   transition: all 0.2s ease-in-out;
 }
 img.active {
-  width: calc(1080px * 0.44);
-  height: calc(1920px * 0.44);
+  width: calc(1587px * 0.44);
+  height: calc(2245px * 0.44);
 }
 .poster:nth-child(n) .active:hover + .name {
   opacity: 1;

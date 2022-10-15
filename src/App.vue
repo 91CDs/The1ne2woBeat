@@ -34,7 +34,7 @@ onUnmounted(() => {
 <template>
   <header>
     <nav v-if="isMobile()" class="wrapper">
-      <img class="logo" src="/logo.png" />
+      <img class="logo" src="/onetobeatlogodark.png" />
       <HamburgerIcon />
       <div class="menu" v-show="isMenuDisplay">
         <img class="profile" src="/pfp.jpg" />
@@ -47,7 +47,7 @@ onUnmounted(() => {
       </div>
     </nav>
     <nav v-if="!isMobile()" class="wrapper">
-      <img class="logo" src="/logo.png" />
+      <img class="logo" src="/onetobeatlogodark.png" />
       <RouterLink to="/"> <i class="fas fa-house icon"></i> Home </RouterLink>
       <RouterLink to="/watch">
         <i class="fas fa-magnifying-glass icon"></i> Watch
@@ -75,12 +75,16 @@ onUnmounted(() => {
   border-radius: 2rem;
 }
 header {
-  line-height: 1.5;
   max-height: 100vh;
+  width: 100vw;
   min-height: var(--header-height);
   background-color: var(--color-background);
+
   display: flex;
   place-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 footer {
@@ -106,7 +110,6 @@ nav {
   align-items: center;
   text-align: right;
   padding: 1rem 0;
-  top: 0;
 }
 
 nav a.router-link-exact-active {
@@ -115,6 +118,10 @@ nav a.router-link-exact-active {
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
+}
+
+nav a:focus {
+  outline: none;
 }
 
 nav a {
@@ -136,7 +143,7 @@ nav a:first-of-type {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 10;
+  z-index: 11;
   padding: 30vh 0;
   background-color: rgba(24, 24, 24, 0.6);
   backdrop-filter: blur(10px);
@@ -153,7 +160,8 @@ nav a:first-of-type {
   margin-right: 1ch;
 }
 .logo {
-  width: 150px;
+  width: 50px;
+  margin: 0 2rem;
 }
 
 @media (min-width: 1024px) {

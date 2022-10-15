@@ -9,12 +9,12 @@
         natus eos debitis itaque asperiores nihil optio quidem? Dolore saepe rem molestias
         laborum mollitia sapiente sunt ratione vero odit.
       </p>
-      <RouterLink to="/watch">
-        <button class="f-600" tabindex="0">See Episodes</button>
-      </RouterLink>
-      <RouterLink to="/watch" href="#main">
-        <button class="f-600 highlight" tabindex="0">See Trailer</button>
-      </RouterLink>
+      <button class="title-btn f-600" tabindex="0">
+        <RouterLink to="/watch"> See Episodes </RouterLink>
+      </button>
+      <button class="title-btn f-600 highlight" tabindex="0">
+        <RouterLink to="/watch" href="#main"> See Trailer </RouterLink>
+      </button>
     </div>
   </section>
 </template>
@@ -40,12 +40,18 @@ section.titlecard {
   animation: load-line 0.2s ease-in-out;
 }
 .feature {
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 .title {
   font-family: var(--font-display);
   font-size: 3.5rem;
   animation: load-left 0.6s ease-out;
+}
+.title-btn {
+  margin-right: 1rem;
+}
+.title-btn.highlight a {
+  color: var(--color-heading);
 }
 .subtitle {
   font-size: 1.1rem;

@@ -26,6 +26,7 @@
     <div class="roleitem">
       <h3 class="f-700">Video Editor</h3>
       <p>
+        Elex Ysmael Maala <br />
         Timothy Chester Ariem <br />
         Mark Gabriel Adan <br />
       </p>

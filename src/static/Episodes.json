@@ -1,0 +1,32 @@
+[
+  {
+    "eptitle": "Episode 1: Pilot",
+    "epduration": 4,
+    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epimg": "https://picsum.photos/1920/1080"
+  },
+  {
+    "eptitle": "Episode 2: Making a Deal",
+    "epduration": 5,
+    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epimg": "https://picsum.photos/1920/1080"
+  },
+  {
+    "eptitle": "Episode 3: A Genuine Heartbreak",
+    "epduration": 6,
+    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epimg": "https://picsum.photos/1920/1080"
+  },
+  {
+    "eptitle": "Episode 4: Loved and Lost",
+    "epduration": 2,
+    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epimg": "https://picsum.photos/1920/1080"
+  },
+  {
+    "eptitle": "Episode 5: Finale",
+    "epduration": 4,
+    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epimg": "https://picsum.photos/1920/1080"
+  }
+]

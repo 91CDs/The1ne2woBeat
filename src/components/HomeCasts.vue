@@ -6,21 +6,14 @@ import HomePosterItem from "./Items/HomePosterItem.vue";
   <section class="charactercard wrapper">
     <h2 class="f-800">Characters</h2>
     <section class="image-wrapper" v-dragscroll="true">
-      <HomePosterItem src="https://picsum.photos/1080/1920">
-        KENJI as CHESTER
-      </HomePosterItem>
-      <HomePosterItem src="https://picsum.photos/1080/1920">
-        Kenji as Chester
-      </HomePosterItem>
-      <HomePosterItem src="https://picsum.photos/1080/1920">
-        Kenji as Chester
-      </HomePosterItem>
-      <HomePosterItem src="https://picsum.photos/1080/1920">
-        Kenji as Chester
-      </HomePosterItem>
-      <HomePosterItem src="https://picsum.photos/1080/1920">
-        Kenji as Chester
-      </HomePosterItem>
+      <HomePosterItem src="/Abigail.png"> ATHENA TIVI as ABIGAIL </HomePosterItem>
+      <HomePosterItem src="/Athena.png"> ELISHA SOROSORO as ATHENA </HomePosterItem>
+      <HomePosterItem src="/Grace.png"> WYNZ BELTRAN as GRACE </HomePosterItem>
+      <HomePosterItem src="/Jigs.png"> MIGUEL DORINGO as JIGS </HomePosterItem>
+      <HomePosterItem src="/Kenji.png"> CHESTER ARIEM as KENJI </HomePosterItem>
+      <HomePosterItem src="/Kirby.png"> LANCE GONZALES as KIRBY </HomePosterItem>
+      <HomePosterItem src="/Lucas.png"> MARK BAGUIO as LUCAS </HomePosterItem>
+      <HomePosterItem src="/Sara.png"> WYNZ BELTRAN as SARA </HomePosterItem>
     </section>
   </section>
 </template>
