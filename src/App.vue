@@ -3,40 +3,64 @@ import { onMounted, onUnmounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HamburgerIcon from "./components/Icons/HamburgerIcon.vue";
 import ThemesButton from "./components/ThemesButton.vue";
-function isMobile() {
+import anime from "animejs/lib/anime.es.js";
+
+const isMobileNav = ref<boolean>(false);
+function setisMobile() {
   const width = window.innerWidth;
-  return width <= 1024 ? true : false;
+  isMobileNav.value = width <= 1024 ? true : false;
 }
 const isMenuDisplay = ref<boolean>(false);
-function setMenuDisplay(this: HTMLElement, event: Event) {
+function setMenuDisplay(event: Event) {
   const el = event.target as HTMLElement;
-  if (el == this) {
+  const elname = el.tagName.toLowerCase();
+  if (elname == "svg") {
     isMenuDisplay.value = !isMenuDisplay.value;
+    anime({
+      targets: ".menubtn",
+      rotate: "90deg",
+      duration: 500,
+      easing: "easeOutCubic",
+    });
+    anime({
+      targets: ".menu",
+      translateX: "0%",
+      delay: 250,
+      duration: 250,
+      easing: "easeOutCubic",
+    });
+  }
+  if (elname == "div") {
+    isMenuDisplay.value = !isMenuDisplay.value;
+    anime({
+      targets: ".menu",
+      translateX: "100%",
+      easing: "easeOutCubic",
+      duration: 250,
+    });
+    anime({
+      targets: ".menubtn",
+      rotate: "0deg",
+    });
   }
 }
+
 onMounted(() => {
-  const menubtn = document.querySelector(".menubtn");
-  const menu = document.querySelector(".menu");
-  if (menubtn && menu) {
-    console.log(menubtn);
-    menubtn.addEventListener("click", setMenuDisplay);
-    menu.addEventListener("click", setMenuDisplay);
-  }
+  /* reactive */
+  setisMobile();
+  window.addEventListener("resize", setisMobile);
 });
 onUnmounted(() => {
-  const menubtn = document.querySelector(".menubtn");
-  if (menubtn) {
-    menubtn.removeEventListener("click", setMenuDisplay);
-  }
+  window.removeEventListener("resize", setisMobile);
 });
 </script>
 
 <template>
   <header>
-    <nav v-if="isMobile()" class="wrapper">
+    <nav v-if="isMobileNav" class="wrapper">
       <img class="logo" src="/onetobeatlogodark.png" />
-      <HamburgerIcon />
-      <div class="menu" v-show="isMenuDisplay">
+      <HamburgerIcon @click="setMenuDisplay" />
+      <div class="menu" @click="setMenuDisplay">
         <img class="logo-m" src="/onetobeatlogodark.png" />
         <RouterLink to="/"> <i class="fas fa-house icon"></i> Home </RouterLink>
         <RouterLink to="/watch">
@@ -46,7 +70,7 @@ onUnmounted(() => {
         <a class="settings"><i class="fas fa-gear icon"></i>Settings</a>
       </div>
     </nav>
-    <nav v-if="!isMobile()" class="wrapper">
+    <nav v-if="!isMobileNav" class="wrapper">
       <img class="logo" src="/onetobeatlogodark.png" />
       <RouterLink to="/"> <i class="fas fa-house icon"></i> Home </RouterLink>
       <RouterLink to="/watch">
@@ -61,7 +85,7 @@ onUnmounted(() => {
 
   <footer class="wrapper">
     <p class="f-400">Made by TheOneToBeat Productions</p>
-    <p class="f-400">2022</p>
+    <p class="f-400">{{ new Date().getFullYear() }}</p>
   </footer>
 </template>
 
@@ -94,7 +118,7 @@ footer {
   justify-content: center;
 }
 footer p {
-  font-size: 1rem;
+  font-size: 12px;
   text-align: center;
   padding: 0 1rem;
   color: var(--color-text);
@@ -147,6 +171,7 @@ nav a:first-of-type {
   padding: 30vh 0;
   background-color: rgba(24, 24, 24, 0.6);
   backdrop-filter: blur(10px);
+  transform: translateX(100%);
 }
 .logo-m {
   width: 50px;
@@ -170,6 +195,9 @@ nav a:first-of-type {
   }
   nav a {
     border-left: 1px solid var(--color-border);
+  }
+  footer p {
+    font-size: 15px;
   }
   .settings {
     border: 0;

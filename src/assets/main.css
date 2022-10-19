@@ -1,5 +1,7 @@
 @import "./base.css";
-
+html {
+  scroll-behavior: smooth;
+}
 #app {
   min-height: 100vh;
   font-weight: normal;
@@ -85,5 +87,11 @@ button:hover {
   a:hover,
   a:focus {
     color: var(--color-accent-mute);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    scroll-behavior: auto;
   }
 }

@@ -2,31 +2,31 @@
   {
     "eptitle": "Episode 1: Pilot",
     "epduration": 4,
-    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epdesc": "How lucky are those who find each other at the right time, at the right moment?",
     "epimg": "https://picsum.photos/1920/1080"
   },
   {
     "eptitle": "Episode 2: Making a Deal",
     "epduration": 5,
-    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epdesc": "When two worlds collide, it’s surely one hell of a roller coaster ride.",
     "epimg": "https://picsum.photos/1920/1080"
   },
   {
     "eptitle": "Episode 3: A Genuine Heartbreak",
     "epduration": 6,
-    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epdesc": "Pretense is always a risk. How long can it stay on its course before it turns into something more?",
     "epimg": "https://picsum.photos/1920/1080"
   },
   {
     "eptitle": "Episode 4: Loved and Lost",
     "epduration": 2,
-    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epdesc": "How far can you go for the love of your life? ",
     "epimg": "https://picsum.photos/1920/1080"
   },
   {
     "eptitle": "Episode 5: Finale",
     "epduration": 4,
-    "epdesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, laboriosam, consequatur accusamus repellendus voluptatem hic voluptatum dolores dolore quaerat tempora animi. Fugit accusantium rerum sed doloribus autem vero inventore ducimus.",
+    "epdesc": "They say love’s timing is perfect, but is it ever worth the wait?",
     "epimg": "https://picsum.photos/1920/1080"
   }
 ]

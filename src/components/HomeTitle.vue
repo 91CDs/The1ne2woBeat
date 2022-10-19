@@ -31,6 +31,8 @@ section.titlecard {
       rgba(207, 51, 181, 0.5) 99%
     ),
     url("https://picsum.photos/seed/picsum/1280/700");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .line {
   background-color: var(--color-accent-mute);

@@ -62,6 +62,8 @@ const tabs: { [index: string | number]: typeof Episodes } = {
       rgba(207, 51, 181, 0.5) 99%
     ),
     url("https://picsum.photos/seed/picsum/1280/700");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .projtitle h1 {
   margin-top: auto;

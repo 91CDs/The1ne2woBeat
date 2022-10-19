@@ -10,34 +10,41 @@ function setDisplay() {
 }
 </script>
 
+<script lang="ts">
+export default {
+  data() {
+    return {
+      sub: this.$slots.default!()[0].children?.toString().split(" ")[4],
+    };
+  },
+};
+</script>
+
 <template>
-  <div class="poster">
-    <img
-      class="image"
-      :class="{ active: display }"
-      @click="setDisplay()"
-      :src="styles.src"
-      alt="poster"
-    />
-    <h3 class="name f-700">
+  <div class="poster" :id="sub">
+    <a :href="`#${sub}`">
+      <img
+        class="image"
+        :class="{ active: display }"
+        @click="setDisplay()"
+        :src="styles.src"
+        alt="poster"
+      />
+    </a>
+    <h3 class="name f-700" :class="{ active: display }">
       <slot></slot>
     </h3>
   </div>
 </template>
 
 <style>
-/* .poster:nth-child(n) {
-  flex-direction: column;
-} */
-/* .poster:nth-child(2n) {
-  flex-direction: column-reverse;
-} */
 .poster {
   margin: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   transition: all 0.1s ease-in-out;
+  scroll-margin: 22vw;
 }
 .name {
   position: absolute;
@@ -51,13 +58,15 @@ function setDisplay() {
   text-orientation: upright;
   height: 70%;
   letter-spacing: -2px;
-  opacity: 0;
   pointer-events: none;
+
+  opacity: 0;
+  font-size: 0;
   transition: all 0.1s ease-in-out;
 }
 .image {
-  width: calc(1587px * 0.3);
-  height: calc(1587px * 0.3);
+  width: calc(1587px * 0.19);
+  height: calc(1587px * 0.19);
   object-fit: cover;
   outline: 1px solid transparent;
   outline-offset: 0px;
@@ -70,16 +79,23 @@ function setDisplay() {
   transition: all 0.2s ease-in-out;
 }
 img.active {
-  width: calc(1587px * 0.44);
-  height: calc(2245px * 0.44);
+  width: calc(1587px * 0.19);
+  height: calc(2245px * 0.19);
 }
-.poster:nth-child(n) .active:hover + .name {
-  opacity: 1;
-  font-size: 1.2rem;
-  background-color: var(--color-background);
-  /* transform: translate3d(1.6rem, 0, 0); */
+
+@media (min-width: 1024px) {
+  .image {
+    width: calc(1587px * 0.35);
+    height: calc(1587px * 0.35);
+  }
+  img.active {
+    width: calc(1587px * 0.35);
+    height: calc(2245px * 0.35);
+  }
+  .name.active {
+    opacity: 1;
+    font-size: 1rem;
+    background-color: var(--color-background);
+  }
 }
-/* .poster:nth-child(2n) .active:hover + .name {
-  transform: translate3d(1.6rem, 0, 0);
-} */
 </style>
