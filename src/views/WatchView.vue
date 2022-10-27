@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import WatchVideoPlayer from "@/components/Items/WatchVideoPlayer.vue";
 import StarRating from "../components/StarRating.vue";
 import Episodes from "../components/WatchEpisodes.vue";
 import Trailers from "../components/WatchTrailers.vue";
-import { ref } from "vue";
 const currentTab = ref<string | number>("Episodes");
 const tabs: { [index: string | number]: typeof Episodes } = {
   Episodes,
@@ -12,16 +13,20 @@ const tabs: { [index: string | number]: typeof Episodes } = {
 
 <template>
   <main>
-    <h1 class="watchtitle f-800">Projects</h1>
-    <section class="project wrapper">
-      <div class="projtitle">
+    <h1 class="watchtitle f-800 wrapper">PROJECTS <span class="f-400">1</span></h1>
+    <section class="project">
+      <section class="projtitle">
         <h1><span class="f-800">Shes Dating The Gangster</span></h1>
         <p class="projdetails">
-          <span>2022</span><span id="PG-13">R-13</span><span>6 episodes</span>
+          <span>2022</span>
+          <span class="chip">R-13</span>
+          <span class="chip">HD</span>
+          <span>5 episodes</span>
         </p>
         <StarRating />
-      </div>
-      <div class="watchtabs wrapper">
+      </section>
+      <WatchVideoPlayer />
+      <section class="watchtabs">
         <a
           v-for="(_, tab) in tabs"
           :key="tab"
@@ -30,7 +35,7 @@ const tabs: { [index: string | number]: typeof Episodes } = {
         >
           {{ tab }}
         </a>
-      </div>
+      </section>
       <component :is="tabs[currentTab]"></component>
     </section>
   </main>
@@ -38,17 +43,22 @@ const tabs: { [index: string | number]: typeof Episodes } = {
 
 <style>
 .watchtitle {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   text-align: left;
   color: var(--color-accent);
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+}
+.watchtitle span {
+  font-size: inherit;
+  color: var(--color-text);
+  padding: 0 1rem;
 }
 
 /* TITLE */
 .projtitle {
   min-height: 50vh;
   border-radius: 4rem 4rem 0 0;
-  box-shadow: 0 -60px 100px -75px var(--color-accent);
+  box-shadow: 0 -30px 50px 1px var(--color-accent-shadow);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -79,14 +89,6 @@ const tabs: { [index: string | number]: typeof Episodes } = {
   background-repeat: no-repeat;
   animation: load-underline 0.8s ease-in-out;
 }
-@keyframes load-underline {
-  from {
-    background-size: 0% 15%;
-  }
-  to {
-    background-size: 100% 15%;
-  }
-}
 .projtitle .projdetails {
   display: flex;
   align-items: center;
@@ -94,19 +96,22 @@ const tabs: { [index: string | number]: typeof Episodes } = {
 .projtitle p {
   margin-left: 2rem;
 }
-.projtitle #PG-13 {
+.projdetails .chip {
   display: inline-block;
   font-size: 12px;
   background-color: var(--color-accent);
   color: var(--color-heading);
   border-radius: 5rem;
   padding: 0 12px;
-  margin: 0 10px;
+}
+.projdetails span + span {
+  margin-left: 10px;
 }
 .projtitle .buttons {
   margin-bottom: 2rem;
 }
 
+/* TABS */
 .watchtabs {
   display: flex;
   justify-content: flex-start;
@@ -131,6 +136,14 @@ a.tabactive:hover {
   transition: all 0.4s ease-in-out;
 }
 
+@keyframes load-underline {
+  from {
+    background-size: 0% 15%;
+  }
+  to {
+    background-size: 100% 15%;
+  }
+}
 @media (min-width: 1024px) {
   .watchtitle:focus,
   .watchtitle:hover {

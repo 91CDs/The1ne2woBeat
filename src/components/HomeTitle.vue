@@ -1,6 +1,7 @@
 <template>
   <section class="titlecard wrapper">
     <div class="feature">
+      <h1 class="heading f-800">Recommended</h1>
       <div class="line"></div>
       <h1 class="title">She's Dating the Gangster</h1>
       <p class="subtitle f-500">A film by 12B Productions</p>
@@ -21,18 +22,27 @@
 
 <style>
 section.titlecard {
-  padding-top: 20rem;
-  padding-bottom: 3rem;
+  margin-top: 0.5rem;
+  padding: 2rem 0;
   background-image: var(--fade-gradient),
     linear-gradient(
       120deg,
-      rgba(207, 75, 51, 0.5) 1%,
+      rgba(207, 75, 51, 0.5) 10%,
       rgba(201, 160, 126, 0),
-      rgba(207, 51, 181, 0.5) 99%
+      rgba(207, 51, 181, 0.5) 90%
     ),
-    url("https://picsum.photos/seed/picsum/1280/700");
+    url("/HEADER.png");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+.feature {
+  padding-left: 1.5rem;
+}
+.heading {
+  padding-bottom: 20rem;
+  font-size: 1.6rem;
 }
 .line {
   background-color: var(--color-accent-mute);
@@ -40,9 +50,6 @@ section.titlecard {
   width: 5rem;
   height: 10px;
   animation: load-line 0.2s ease-in-out;
-}
-.feature {
-  padding-left: 1.5rem;
 }
 .title {
   font-family: var(--font-display);

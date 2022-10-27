@@ -20,7 +20,8 @@
       <h3 class="f-700">Cinematographer</h3>
       <p>
         Lance Gonzales <br />
-        Mark Baguio
+        Elex Ysmael Maala <br />
+        Kayle Abenojar
       </p>
     </div>
     <div class="roleitem">
@@ -51,7 +52,8 @@
       <h3 class="f-700">Photographers</h3>
       <p>
         Lance Gonzales <br />
-        Mark Baguio
+        Mark Baguio <br />
+        Kayle Abenojar
       </p>
     </div>
     <div class="roleitem">

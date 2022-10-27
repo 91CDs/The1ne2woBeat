@@ -46,10 +46,10 @@ onMounted(() => {
       <div class="icon wrapper"><i class="fa-solid fa-info"></i></div>
       <h2 aos="fade-left" class="ustitle wrapper f-800">Who we are</h2>
       <p aos="fade-left" class="aboutdesc wrapper" style="--delay: 500ms">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit
-        accusamus repellendus at doloremque, aut praesentium vel ex dolore, quisquam
-        accusantium! Doloribus, quibusdam? Possimus, excepturi dicta laboriosam modi ipsa
-        voluptate.
+        TheOneToBeat Productions is a small but capable TPS based production team
+        dedicated to bringing you one of the student films of your life. We strive to be
+        as creative as possible even with a <s>relatively small</s> virtually non-existent
+        budget.
       </p>
       <RolesCard />
     </section>

@@ -2,7 +2,6 @@
 import { onMounted, onUnmounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HamburgerIcon from "./components/Icons/HamburgerIcon.vue";
-import ThemesButton from "./components/ThemesButton.vue";
 import anime from "animejs/lib/anime.es.js";
 
 const isMobileNav = ref<boolean>(false);
@@ -66,8 +65,7 @@ onUnmounted(() => {
         <RouterLink to="/watch">
           <i class="fas fa-magnifying-glass icon"></i> Watch
         </RouterLink>
-        <RouterLink to="/aboutus"> About </RouterLink>
-        <a class="settings"><i class="fas fa-gear icon"></i>Settings</a>
+        <RouterLink to="/aboutus"> <i class="fas fa-info icon"></i> About </RouterLink>
       </div>
     </nav>
     <nav v-if="!isMobileNav" class="wrapper">
@@ -76,8 +74,7 @@ onUnmounted(() => {
       <RouterLink to="/watch">
         <i class="fas fa-magnifying-glass icon"></i> Watch
       </RouterLink>
-      <RouterLink to="/aboutus"> About </RouterLink>
-      <ThemesButton />
+      <RouterLink to="/aboutus"> <i class="fas fa-info icon"></i> About </RouterLink>
     </nav>
   </header>
 
@@ -111,22 +108,6 @@ header {
   z-index: 10;
 }
 
-footer {
-  min-height: var(--footer-height);
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
-footer p {
-  font-size: 12px;
-  text-align: center;
-  padding: 0 1rem;
-  color: var(--color-text);
-}
-footer p + p {
-  border-left: 1px solid var(--color-border);
-}
-
 nav {
   width: 100%;
   font-size: 1rem;
@@ -139,20 +120,16 @@ nav {
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
-
 nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
-
 nav a:focus {
   outline: none;
 }
-
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
-
 nav a:first-of-type {
   border: 0;
 }
@@ -173,10 +150,6 @@ nav a:first-of-type {
   backdrop-filter: blur(10px);
   transform: translateX(100%);
 }
-.logo-m {
-  width: 50px;
-  border-radius: 50%;
-}
 .menu > * {
   margin: auto;
 }
@@ -188,13 +161,30 @@ nav a:first-of-type {
   width: 50px;
   margin: 0 2rem;
 }
+.logo-m {
+  width: 50px;
+  border-radius: 50%;
+}
+
+footer {
+  min-height: var(--footer-height);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+footer p {
+  font-size: 12px;
+  text-align: center;
+  padding: 0 1rem;
+  color: var(--color-text);
+}
+footer p + p {
+  border-left: 1px solid var(--color-border);
+}
 
 @media (min-width: 1024px) {
   nav {
     text-align: left;
-  }
-  nav a {
-    border-left: 1px solid var(--color-border);
   }
   footer p {
     font-size: 15px;

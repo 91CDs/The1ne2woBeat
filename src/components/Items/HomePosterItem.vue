@@ -67,6 +67,7 @@ export default {
 .image {
   width: calc(1587px * 0.19);
   height: calc(1587px * 0.19);
+  border-radius: 2rem;
   object-fit: cover;
   outline: 1px solid transparent;
   outline-offset: 0px;
@@ -81,6 +82,7 @@ export default {
 img.active {
   width: calc(1587px * 0.19);
   height: calc(2245px * 0.19);
+  border-radius: 0;
 }
 
 @media (min-width: 1024px) {

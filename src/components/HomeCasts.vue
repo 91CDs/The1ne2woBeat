@@ -1,11 +1,19 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
 import HomePosterItem from "./Items/HomePosterItem.vue";
+const castno = ref<number>();
+onMounted(() => {
+  const posters = document.querySelectorAll(".poster");
+  castno.value = posters.length;
+});
 </script>
 
 <template>
   <section class="charactercard wrapper">
-    <h2 class="f-800">MAIN CAST</h2>
-    <section class="image-wrapper" v-dragscroll="true">
+    <h1 class="f-800">
+      MAIN CAST <span class="f-400">{{ castno }}</span>
+    </h1>
+    <section class="image-wrapper">
       <HomePosterItem src="/Abigail.png"> ATHENA TIVI as ABIGAIL </HomePosterItem>
       <HomePosterItem src="/Athena.png"> ELISHA SOROSORO as ATHENA </HomePosterItem>
       <HomePosterItem src="/Grace.png"> WYNZ BELTRAN as GRACE </HomePosterItem>
@@ -22,9 +30,15 @@ import HomePosterItem from "./Items/HomePosterItem.vue";
 section.charactercard {
   margin: 1rem 0;
 }
-.charactercard h2 {
-  font-size: 2.5rem;
-  text-align: center;
+.charactercard h1 {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+.charactercard span {
+  font-size: inherit;
+  color: var(--color-text);
+  padding: 0 1rem;
 }
 .image-wrapper {
   display: flex;
