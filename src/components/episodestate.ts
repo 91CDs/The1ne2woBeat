@@ -7,7 +7,7 @@ export function useEpisode() {
     "86Tfw6MaxW4",
     "N7sXNK6tOFY",
     "MH9R97p_Du0",
-    "SLUqjNiJBYc",
+    "Bjq12wyFxco",
   ];
   const epindex = ref<number>(0);
 
