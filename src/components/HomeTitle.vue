@@ -6,9 +6,10 @@
       <h1 class="title">She's Dating the Gangster</h1>
       <p class="subtitle f-500">A film by 12B Productions</p>
       <p class="desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorem placeat
-        natus eos debitis itaque asperiores nihil optio quidem? Dolore saepe rem molestias
-        laborum mollitia sapiente sunt ratione vero odit.
+        Seventeen-year-old Athena Dizon unintentionally pulls a prank on the resident bad
+        boy and heartthrob Kenji de los Reyes. She finds herself suddenly pretending to be
+        his girlfriend in order to make an ex envious, but how long can they play the game
+        of pretense?
       </p>
       <button class="title-btn f-600" tabindex="0">
         <RouterLink to="/watch"> See Episodes </RouterLink>

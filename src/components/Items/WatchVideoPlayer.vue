@@ -1,44 +1,7 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup lang="ts">
-import YoutubePlayer from "youtube-player/dist/index.js";
-import { onMounted, ref } from "vue";
-const src: string[] = [
-  "jNQXAC9IVRw",
-  "1JNmz17gnMw",
-  "jNQXAC9IVRw",
-  "1JNmz17gnMw",
-  "jNQXAC9IVRw",
-];
-
-const epindex = ref<number>(0);
-function nextEp() {
-  if (epindex.value < src.length - 1) epindex.value = epindex.value + 1;
-  changeLink();
-  console.log(`clicked next: ${epindex.value}`);
-}
-function prevEp() {
-  if (epindex.value > 0) epindex.value = epindex.value - 1;
-  changeLink();
-  console.log(`clicked prev: ${epindex.value}`);
-}
-
-let ytplayer: ReturnType<typeof YoutubePlayer>;
-onMounted(() => {
-  ytplayer = YoutubePlayer("player", {
-    width: 1920,
-    height: 1080,
-    videoId: src[epindex.value],
-    playerVars: {
-      autoplay: 0,
-      modestbranding: 1,
-      rel: 0,
-    },
-  });
-});
-
-function changeLink() {
-  ytplayer.cueVideoById(src[epindex.value]);
-}
+import { useEpisode } from "../episodestate";
+const { prevEp, nextEp, epindex } = useEpisode();
 </script>
 
 <template>
