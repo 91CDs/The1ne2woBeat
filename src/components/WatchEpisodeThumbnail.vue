@@ -14,11 +14,11 @@ const data = defineProps<{
 
 <style>
 .overlay {
-  grid-area: image;
+  grid-area: thumbnail;
 }
 .overlay img {
-  aspect-ratio: 16 / 9;
-  width: min(80vw, var(--max-length));
+  aspect-ratio: 4 / 3;
+  width: 100%;
 }
 .overlay #play {
   width: 2rem;
@@ -44,7 +44,7 @@ const data = defineProps<{
 
 @media (min-width: 1024px) {
   .overlay img {
-    height: 8rem;
+    height: 6rem;
     width: auto;
   }
   .overlay #play {

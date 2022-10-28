@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import WatchVideoPlayer from "@/components/Items/WatchVideoPlayer.vue";
 import StarRating from "../components/StarRating.vue";
 import Episodes from "../components/WatchEpisodes.vue";
-import Trailers from "../components/WatchTrailers.vue";
-const currentTab = ref<string | number>("Episodes");
-const tabs: { [index: string | number]: typeof Episodes } = {
-  Episodes,
-  Trailers,
-};
 </script>
 
 <template>
   <main>
-    <h1 class="watchtitle f-800 wrapper">PROJECTS <span class="f-400">1</span></h1>
+    <h1 class="watchtitle f-800">Projects <span class="f-400">1</span></h1>
     <section class="project">
+      <WatchVideoPlayer />
+      <Episodes />
       <section class="projtitle">
         <h1><span class="f-800">Shes Dating The Gangster</span></h1>
         <p class="projdetails">
@@ -25,18 +20,6 @@ const tabs: { [index: string | number]: typeof Episodes } = {
         </p>
         <StarRating />
       </section>
-      <WatchVideoPlayer />
-      <section class="watchtabs">
-        <a
-          v-for="(_, tab) in tabs"
-          :key="tab"
-          :class="{ tabactive: currentTab === tab }"
-          @click="currentTab = tab"
-        >
-          {{ tab }}
-        </a>
-      </section>
-      <component :is="tabs[currentTab]"></component>
     </section>
   </main>
 </template>
@@ -46,24 +29,27 @@ const tabs: { [index: string | number]: typeof Episodes } = {
   font-size: 1.6rem;
   text-align: left;
   color: var(--color-accent);
-  margin: 2rem 0;
+  text-transform: uppercase;
+  margin: 1rem auto;
 }
 .watchtitle span {
   font-size: inherit;
   color: var(--color-text);
   padding: 0 1rem;
 }
+.project {
+  width: 80vw;
+  margin: auto;
+}
 
 /* TITLE */
 .projtitle {
-  min-height: 50vh;
-  border-radius: 4rem 4rem 0 0;
-  box-shadow: 0 -30px 50px 1px var(--color-accent-shadow);
+  grid-area: projtitle;
+  min-height: 40vh;
+  border-radius: 2rem 2rem 0 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
-  text-align: left;
+  box-shadow: 0 -30px 50px 1px var(--color-accent-shadow);
   background-image: var(--fade-gradient),
     linear-gradient(
       120deg,
@@ -77,7 +63,6 @@ const tabs: { [index: string | number]: typeof Episodes } = {
 }
 .projtitle h1 {
   margin-top: auto;
-  line-height: 1.3;
   margin-left: 2rem;
   margin-bottom: 1rem;
   font-size: 2.5rem;
@@ -111,31 +96,6 @@ const tabs: { [index: string | number]: typeof Episodes } = {
   margin-bottom: 2rem;
 }
 
-/* TABS */
-.watchtabs {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.watchtabs a {
-  padding: 1rem;
-}
-a.tabactive {
-  background-image: linear-gradient(
-    to right,
-    var(--color-accent),
-    var(--color-accent-mute)
-  );
-  background-size: 400% 5px;
-  background-position: top left;
-  background-repeat: no-repeat;
-}
-a.tabactive:hover {
-  background-position: top right;
-  transition: all 0.4s ease-in-out;
-}
-
 @keyframes load-underline {
   from {
     background-size: 0% 15%;
@@ -149,6 +109,16 @@ a.tabactive:hover {
   .watchtitle:hover {
     transition: all 0.8s ease-in-out;
     color: var(--color-accent);
+  }
+
+  .project {
+    display: grid;
+    grid-template-areas:
+      "player episode"
+      "projtitle episode"
+      "projtitle _";
+    grid-template-columns: auto 27rem;
+    gap: 2rem;
   }
 }
 </style>

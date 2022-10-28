@@ -3,24 +3,29 @@ import { onMounted, ref } from "vue";
 import StarIcon from "./Icons/StarIcon.vue";
 
 const buttons = ref<Element[]>([]);
+let accent = getComputedStyle(document.documentElement).getPropertyValue(
+  "--color-accent"
+);
 function setRating(rating: number) {
+  console.log("color: " + accent);
+  console.log("rating: " + rating);
+
   // Fill Stars
   for (let i = 0; i < rating; i++) {
     const el = buttons.value[i] as HTMLElement;
     const elfill = el.style.fill;
-    if (elfill !== "rgb(0, 189, 142)") {
-      el.style.fill = "rgb(0, 189, 142)";
+    if (elfill !== accent) {
+      el.style.fill = accent;
+      accent = el.style.fill;
     } else if (rating == 1) {
       el.style.fill = "none";
     }
   }
+
   // Unfill Stars
   for (let i = rating; i < buttons.value.length; i++) {
     const el = buttons.value[i] as HTMLElement;
-    const elfill = el.style.fill;
-    if (elfill == "rgb(0, 189, 142)") {
-      el.style.fill = "none";
-    }
+    el.style.fill = "none";
   }
 }
 

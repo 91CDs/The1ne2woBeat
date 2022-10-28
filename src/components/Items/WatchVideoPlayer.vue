@@ -25,8 +25,8 @@ function prevEp() {
 let ytplayer: ReturnType<typeof YoutubePlayer>;
 onMounted(() => {
   ytplayer = YoutubePlayer("player", {
-    width: 1024,
-    height: 512,
+    width: 1920,
+    height: 1080,
     videoId: src[epindex.value],
     playerVars: {
       autoplay: 0,
@@ -52,17 +52,20 @@ function changeLink() {
 
 <style>
 .videoplayer {
+  grid-area: player;
   display: grid;
   grid-template-areas:
     "video video video"
     "episode prev next";
-  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-columns: 3fr auto auto;
   column-gap: 1rem;
   margin-bottom: 1rem;
 }
 #player {
   grid-area: video;
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 .playerdesc {
   grid-area: episode;
