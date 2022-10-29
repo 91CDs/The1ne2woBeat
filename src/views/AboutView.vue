@@ -55,11 +55,7 @@ main.parallax {
   perspective: 2px;
   overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-width: 0;
-  height: calc(100vh - var(--header-height));
-}
-main.parallax::-webkit-scrollbar {
-  display: none;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 .aboutquote {

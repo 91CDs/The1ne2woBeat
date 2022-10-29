@@ -62,7 +62,7 @@ import Episodes from "../components/WatchEpisodes.vue";
       rgba(201, 160, 126, 0),
       rgba(207, 51, 181, 0.5) 99%
     ),
-    url("https://picsum.photos/seed/picsum/1280/700");
+    url("/HEADER.png");
   background-size: cover;
   background-repeat: no-repeat;
 }

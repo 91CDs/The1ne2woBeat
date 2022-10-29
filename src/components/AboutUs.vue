@@ -17,7 +17,7 @@ import AboutRoles from "./AboutRoles.vue";
 
 <style>
 .aboutus {
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
   background-color: var(--color-background);
 }
 .aboutus div.icon {
