@@ -44,7 +44,6 @@ onMounted(() => {
     <button ref="b3" @click="setRating(3)"><StarIcon /></button>
     <button ref="b4" @click="setRating(4)"><StarIcon /></button>
     <button ref="b5" @click="setRating(5)"><StarIcon /></button>
-    <button class="submit"></button>
   </div>
 </template>
 

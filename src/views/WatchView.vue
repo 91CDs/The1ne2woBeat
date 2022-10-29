@@ -11,7 +11,7 @@ import Episodes from "../components/WatchEpisodes.vue";
       <WatchVideoPlayer />
       <Episodes />
       <section class="projtitle">
-        <h1><span class="f-800">Shes Dating The Gangster</span></h1>
+        <h1><span class="f-800">Shes Dating the Gangster</span></h1>
         <p class="projdetails">
           <span class="chip2">Romance</span>
           <span class="chip2">Drama</span>
@@ -81,6 +81,7 @@ import Episodes from "../components/WatchEpisodes.vue";
 .projtitle .projdetails {
   display: flex;
   align-items: center;
+  margin-bottom: 0.25rem;
 }
 .projdetails .chip {
   display: inline-block;

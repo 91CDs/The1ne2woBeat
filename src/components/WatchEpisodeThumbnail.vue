@@ -17,7 +17,7 @@ const data = defineProps<{
   grid-area: thumbnail;
 }
 .overlay img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   width: 100%;
 }
 .overlay #play {
@@ -45,6 +45,7 @@ const data = defineProps<{
 @media (min-width: 1024px) {
   .overlay img {
     height: 6rem;
+    aspect-ratio: 4 / 3;
     width: auto;
   }
   .overlay #play {

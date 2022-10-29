@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import episodedata from "../static/Episodes.json";
 import EpisodeThumbnail from "./WatchEpisodeThumbnail.vue";
+import WatchTrailers from "./WatchTrailers.vue";
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import EpisodeThumbnail from "./WatchEpisodeThumbnail.vue";
       <p class="epdetails">{{ `${episode.epduration} min` }}</p>
       <p class="epdesc">{{ episode.epdesc }}</p>
     </div>
+    <WatchTrailers />
   </section>
 </template>
 

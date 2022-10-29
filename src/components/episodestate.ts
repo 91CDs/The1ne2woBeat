@@ -5,10 +5,11 @@ export function useEpisode() {
   const src: string[] = [
     "TRfkFALkVIk",
     "86Tfw6MaxW4",
-    "N7sXNK6tOFY",
+    "hekf6dbT1I8",
     "MH9R97p_Du0",
     "Bjq12wyFxco",
   ];
+  const trailersrc = "8wtAaoin9tY";
   const epindex = ref<number>(0);
 
   let ytplayer: ReturnType<typeof YoutubePlayer>;
@@ -29,6 +30,7 @@ export function useEpisode() {
   function playerHandler() {
     const titles = document.querySelectorAll(".eptitle");
     const images = document.querySelectorAll(".overlay");
+    const trailer = document.querySelector(".trailer");
     console.log(titles);
     console.log(images);
     titles.forEach((el, index) => {
@@ -40,6 +42,22 @@ export function useEpisode() {
       el.addEventListener("click", () => {
         setEp(index);
       });
+    });
+    trailer?.addEventListener("click", () => {
+      setTrailer();
+    });
+    titles.forEach((el, index) => {
+      el.addEventListener("touchdown", () => {
+        setEp(index);
+      });
+    });
+    images.forEach((el, index) => {
+      el.addEventListener("touchdown", () => {
+        setEp(index);
+      });
+    });
+    trailer?.addEventListener("touchdown", () => {
+      setTrailer();
     });
   }
 
@@ -65,11 +83,14 @@ export function useEpisode() {
       changeLink();
     }
   }
+  function setTrailer() {
+    ytplayer.cueVideoById(trailersrc);
+  }
   function changeLink() {
     ytplayer.cueVideoById(src[epindex.value]);
     console.log(`set episode to episode ${epindex.value + 1}`);
     console.log(src[epindex.value]);
   }
 
-  return { setEp, nextEp, prevEp, epindex };
+  return { setEp, nextEp, prevEp, setTrailer, epindex };
 }
