@@ -2,6 +2,10 @@
 html {
   scroll-behavior: smooth;
 }
+::selection {
+  color: var(--color-heading);
+  background-color: var(--color-accent-mute);
+}
 #app {
   min-height: 100vh;
   font-weight: normal;
@@ -22,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 button {
   background-color: transparent;
-  font-size: 1rem;
+  font-size: clamp(10px, 3vw , 1rem);
   color: var(--color-accent);
   border: 1px solid var(--color-accent);
   border-radius: 1em;
@@ -65,7 +69,7 @@ button:hover {
 .fade-left {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: all 0.8s ease-in-out var(--delay);
+  transition: opacity 0.8s ease-in-out var(--delay), transform 0.8s ease-in-out var(--delay);
 }
 
 [aos="fade-right"] {
@@ -76,7 +80,7 @@ button:hover {
 .fade-right {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: all 0.8s ease-in-out var(--delay);
+  transition: opacity 0.8s ease-in-out var(--delay), transform 0.8s ease-in-out var(--delay);
 }
 
 @media (hover: hover) {

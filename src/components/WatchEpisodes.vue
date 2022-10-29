@@ -24,8 +24,8 @@ import EpisodeThumbnail from "./WatchEpisodeThumbnail.vue";
   grid-area: episode;
 }
 .episodes > h1 {
+  padding: 1rem 0;
   font-size: 1.6rem;
-  padding: 2rem;
   text-transform: uppercase;
 }
 .episodes > h1 > span {
@@ -57,6 +57,7 @@ import EpisodeThumbnail from "./WatchEpisodeThumbnail.vue";
 .episode p.epdetails {
   grid-area: epdetails;
   line-height: 1;
+  text-align: right;
 }
 
 .episode p.epdesc {
@@ -77,14 +78,10 @@ import EpisodeThumbnail from "./WatchEpisodeThumbnail.vue";
     column-gap: 1.25rem;
     row-gap: 0;
   }
-  .episode p.epdetails {
-    padding-top: 2rem;
-  }
   .episode p {
     font-size: 1rem;
   }
   .episode h2 {
-    padding-top: 2rem;
     font-size: 1.6rem;
   }
   .epnumber {
@@ -114,6 +111,7 @@ import EpisodeThumbnail from "./WatchEpisodeThumbnail.vue";
     overflow: hidden;
   }
   .episodes > h1 {
+    padding: 2rem;
     background-color: var(--color-background-soft);
     margin-bottom: 1rem;
   }

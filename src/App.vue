@@ -169,6 +169,7 @@ nav a:first-of-type {
 footer {
   min-height: var(--footer-height);
   width: 100vw;
+  padding: 0.5rem 0;
   display: flex;
   justify-content: center;
 }

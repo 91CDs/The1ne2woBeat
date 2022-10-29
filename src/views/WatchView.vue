@@ -13,6 +13,10 @@ import Episodes from "../components/WatchEpisodes.vue";
       <section class="projtitle">
         <h1><span class="f-800">Shes Dating The Gangster</span></h1>
         <p class="projdetails">
+          <span class="chip2">Romance</span>
+          <span class="chip2">Drama</span>
+        </p>
+        <p class="projdetails">
           <span>2022</span>
           <span class="chip">R-13</span>
           <span class="chip">HD</span>
@@ -46,6 +50,7 @@ import Episodes from "../components/WatchEpisodes.vue";
 .projtitle {
   grid-area: projtitle;
   min-height: 40vh;
+  padding: 0 1.5rem;
   border-radius: 2rem 2rem 0 0;
   display: flex;
   flex-direction: column;
@@ -62,10 +67,9 @@ import Episodes from "../components/WatchEpisodes.vue";
   background-repeat: no-repeat;
 }
 .projtitle h1 {
+  font-size: 2rem;
   margin-top: auto;
-  margin-left: 2rem;
   margin-bottom: 1rem;
-  font-size: 2.5rem;
 }
 .projtitle h1 span {
   background-image: linear-gradient(to right, var(--color-accent), wheat);
@@ -78,13 +82,18 @@ import Episodes from "../components/WatchEpisodes.vue";
   display: flex;
   align-items: center;
 }
-.projtitle p {
-  margin-left: 2rem;
-}
 .projdetails .chip {
   display: inline-block;
   font-size: 12px;
   background-color: var(--color-accent);
+  color: var(--color-heading);
+  border-radius: 5rem;
+  padding: 0 12px;
+}
+.projdetails .chip2 {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid var(--color-accent);
   color: var(--color-heading);
   border-radius: 5rem;
   padding: 0 12px;
@@ -119,6 +128,11 @@ import Episodes from "../components/WatchEpisodes.vue";
       "projtitle _";
     grid-template-columns: auto 27rem;
     gap: 2rem;
+    width: 90vw;
+  }
+
+  .projtitle h1 {
+    font-size: 3rem;
   }
 }
 </style>

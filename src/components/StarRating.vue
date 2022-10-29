@@ -49,9 +49,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.buttons {
-  margin-left: 2rem;
-}
 button {
   width: 1.2rem;
   height: 1.2rem;

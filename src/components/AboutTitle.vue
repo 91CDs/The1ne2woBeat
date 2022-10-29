@@ -88,6 +88,7 @@ span.bgelement {
   font-size: min(50vw, 35rem);
   color: var(--color-text-mute);
   transform: translate3d(0px, 0px, -1px) scale(1.6);
+  pointer-events: none;
   animation: load-desc 1s ease-in-out;
 }
 </style>

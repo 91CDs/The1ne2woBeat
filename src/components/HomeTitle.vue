@@ -2,21 +2,25 @@
   <section class="titlecard wrapper">
     <div class="feature">
       <h1 class="heading f-800">Recommended</h1>
-      <div class="line"></div>
-      <h1 class="title">She's Dating the Gangster</h1>
-      <p class="subtitle f-500">A film by 12B Productions</p>
-      <p class="desc">
-        Seventeen-year-old Athena Dizon unintentionally pulls a prank on the resident bad
-        boy and heartthrob Kenji de los Reyes. She finds herself suddenly pretending to be
-        his girlfriend in order to make an ex envious, but how long can they play the game
-        of pretense?
-      </p>
-      <button class="title-btn f-600" tabindex="0">
-        <RouterLink to="/watch"> See Episodes </RouterLink>
-      </button>
-      <button class="title-btn f-600 highlight" tabindex="0">
-        <RouterLink to="/watch" href="#main"> See Trailer </RouterLink>
-      </button>
+      <div class="projdesc">
+        <div class="line"></div>
+        <h1 class="title">She's Dating the Gangster</h1>
+        <p class="subtitle f-500">A film by 12B Productions</p>
+        <p class="desc">
+          Seventeen-year-old Athena Dizon unintentionally pulls a prank on the resident
+          bad boy and heartthrob Kenji de los Reyes. She finds herself suddenly pretending
+          to be his girlfriend in order to make an ex envious, but how long can they play
+          the game of pretense?
+        </p>
+        <div class="homebuttons">
+          <button class="title-btn f-600" tabindex="0">
+            <RouterLink to="/watch"> See Episodes </RouterLink>
+          </button>
+          <button class="title-btn f-600 highlight" tabindex="0">
+            <RouterLink to="/watch" href="#main"> See Trailer </RouterLink>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -24,6 +28,7 @@
 <style>
 section.titlecard {
   margin-top: 0.5rem;
+  height: 80vh;
   padding: 2rem 0;
   background-image: var(--fade-gradient),
     linear-gradient(
@@ -39,37 +44,45 @@ section.titlecard {
   border-radius: 2rem;
 }
 .feature {
-  padding-left: 1.5rem;
+  padding: 0 1.5rem;
+  height: 100%;
 }
-.heading {
-  padding-bottom: 20rem;
-  font-size: 1.6rem;
+
+.feature h1.heading {
+  font-size: 1.5rem;
 }
-.line {
+
+.projdesc {
+  height: calc(100% - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.feature .line {
   background-color: var(--color-accent-mute);
   border-radius: 1rem;
   width: 5rem;
   height: 10px;
   animation: load-line 0.2s ease-in-out;
 }
-.title {
+.feature h1.title {
   font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-size: 2rem;
   animation: load-left 0.6s ease-out;
 }
-.title-btn {
+.feature button {
   margin-right: 1rem;
 }
-.title-btn.highlight a {
+.feature .title-btn.highlight a {
   color: var(--color-heading);
 }
-.subtitle {
-  font-size: 1.1rem;
+.feature p.subtitle {
+  font-size: 15px;
   color: var(--color-heading);
   animation: load-right 1s ease-out;
 }
-.desc {
-  font-size: 1rem;
+.feature p.desc {
+  font-size: 12px;
   text-indent: 3rem;
   margin-bottom: 1rem;
   animation: load-right 1s ease-out;
@@ -104,7 +117,18 @@ section.titlecard {
 }
 
 @media (min-width: 1024px) {
-  .desc {
+  .feature h1.heading {
+    font-size: 1.6rem;
+  }
+  .feature h1.title {
+    font-size: 3.5rem;
+  }
+  .featrue p.subtitle {
+    font-size: 1.1rem;
+  }
+
+  .feature p.desc {
+    font-size: 1rem;
     padding-right: 50%;
   }
 }
