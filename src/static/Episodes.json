@@ -1,31 +1,31 @@
 [
   {
     "eptitle": "Episode 1: Pilot",
-    "epduration": 4,
+    "epduration": 6,
     "epdesc": "How lucky are those who find each other at the right time, at the right moment?",
     "epimg": "/1.png"
   },
   {
     "eptitle": "Episode 2: Making a Deal",
-    "epduration": 5,
+    "epduration": 3,
     "epdesc": "When two worlds collide, it’s surely one hell of a roller coaster ride.",
     "epimg": "/2.png"
   },
   {
     "eptitle": "Episode 3: A Genuine Heartbreak",
-    "epduration": 6,
+    "epduration": 4,
     "epdesc": "Pretense is always a risk. How long can it stay on its course before it turns into something more?",
     "epimg": "/3.png"
   },
   {
     "eptitle": "Episode 4: Loved and Lost",
-    "epduration": 2,
+    "epduration": 4,
     "epdesc": "How far can you go for the love of your life? ",
     "epimg": "/4.png"
   },
   {
     "eptitle": "Episode 5: Finale",
-    "epduration": 4,
+    "epduration": 7,
     "epdesc": "They say love’s timing is perfect, but is it ever worth the wait?",
     "epimg": "/5.png"
   }
