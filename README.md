@@ -1,5 +1,5 @@
-# gangGangplus 
-The website for all your non needs or something along those lines
+# TheOneTwoBeat Production Website
+GGS 
 
 This template should help get you started developing with Vue 3 in Vite.
 

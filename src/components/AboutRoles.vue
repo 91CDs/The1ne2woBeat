@@ -20,7 +20,6 @@
       <h3 class="f-700">Cinematographer</h3>
       <p>
         Lance Gonzales <br />
-        Elex Ysmael Maala <br />
         Kayle Abenojar
       </p>
     </div>
@@ -30,6 +29,8 @@
         Elex Ysmael Maala <br />
         Timothy Chester Ariem <br />
         Mark Gabriel Adan <br />
+        Kent Reyes <br />
+        Carl David Benamer
       </p>
     </div>
     <div class="roleitem">
@@ -42,11 +43,7 @@
     </div>
     <div class="roleitem">
       <h3 class="f-700">Website Editor</h3>
-      <p>
-        Carl David Benamer <br />
-        Elex Ysmael Maala <br />
-        Mark Gabriel Adan
-      </p>
+      <p>Carl David Benamer</p>
     </div>
     <div class="roleitem">
       <h3 class="f-700">Photographers</h3>
@@ -61,7 +58,8 @@
       <p>
         Elex Ysmael Maala <br />
         Carl David Benamer <br />
-        John Alfred Miguel Doringo
+        John Alfred Miguel Doringo <br />
+        Athena Nicole Tivi
       </p>
     </div>
   </section>
