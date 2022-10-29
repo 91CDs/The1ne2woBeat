@@ -17,7 +17,7 @@
             <RouterLink to="/watch"> See Episodes </RouterLink>
           </button>
           <button class="title-btn f-600 highlight" tabindex="0">
-            <RouterLink to="/watch" href="#main"> See Trailer </RouterLink>
+            <RouterLink to="/watch"> See Trailer </RouterLink>
           </button>
         </div>
       </div>
