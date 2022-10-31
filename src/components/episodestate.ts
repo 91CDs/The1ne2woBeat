@@ -9,7 +9,7 @@ export function useEpisode() {
     "MH9R97p_Du0",
     "-ydmaB37qm0",
   ];
-  const trailersrc = "8wtAaoin9tY";
+  const trailersrc = "zsWHVdMS3Gc";
   const epindex = ref<number>(0);
 
   let ytplayer: ReturnType<typeof YoutubePlayer>;
