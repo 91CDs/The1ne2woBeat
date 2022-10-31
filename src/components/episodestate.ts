@@ -7,7 +7,7 @@ export function useEpisode() {
     "86Tfw6MaxW4",
     "hekf6dbT1I8",
     "MH9R97p_Du0",
-    "Bjq12wyFxco",
+    "-ydmaB37qm0",
   ];
   const trailersrc = "8wtAaoin9tY";
   const epindex = ref<number>(0);
@@ -31,20 +31,11 @@ export function useEpisode() {
     const titles = document.querySelectorAll(".eptitle");
     const images = document.querySelectorAll(".overlay");
     const trailer = document.querySelector(".trailer");
-    console.log(titles);
-    console.log(images);
+
     titles.forEach((el, index) => {
       el.addEventListener("click", () => {
         setEp(index);
       });
-    });
-    images.forEach((el, index) => {
-      el.addEventListener("click", () => {
-        setEp(index);
-      });
-    });
-    trailer?.addEventListener("click", () => {
-      setTrailer();
     });
     titles.forEach((el, index) => {
       el.addEventListener("touchdown", () => {
@@ -52,13 +43,17 @@ export function useEpisode() {
       });
     });
     images.forEach((el, index) => {
+      el.addEventListener("click", () => {
+        setEp(index);
+      });
+    });
+    images.forEach((el, index) => {
       el.addEventListener("touchdown", () => {
         setEp(index);
       });
     });
-    trailer?.addEventListener("touchdown", () => {
-      setTrailer();
-    });
+    trailer?.addEventListener("click", setTrailer);
+    trailer?.addEventListener("touchdown", setTrailer);
   }
 
   function nextEp() {
@@ -66,20 +61,18 @@ export function useEpisode() {
       epindex.value = epindex.value + 1;
       changeLink();
     }
-    console.log(`clicked next: ${epindex.value}`);
+    console.log(`clicked next: ${epindex.value + 1}`);
   }
   function prevEp() {
     if (epindex.value > 0) {
       epindex.value = epindex.value - 1;
       changeLink();
     }
-    console.log(`clicked prev: ${epindex.value}`);
+    console.log(`clicked prev: ${epindex.value + 1}`);
   }
   function setEp(number: number) {
-    console.log(number);
     if (number >= 0 && number < 5) {
       epindex.value = number;
-      console.log(`${epindex.value} < index`);
       changeLink();
     }
   }
@@ -89,7 +82,6 @@ export function useEpisode() {
   function changeLink() {
     ytplayer.cueVideoById(src[epindex.value]);
     console.log(`set episode to episode ${epindex.value + 1}`);
-    console.log(src[epindex.value]);
   }
 
   return { setEp, nextEp, prevEp, setTrailer, epindex };
